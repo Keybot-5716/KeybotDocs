@@ -1,4 +1,8 @@
 ¿Cómo crear un nuevo proyecto?
 ==============================
 
-ola k ase
+.. note:: Hola k ase
+
+.. warning:: Hola k pasa
+
+.. important:: K pasa broo
