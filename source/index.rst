@@ -3,18 +3,29 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Keybot 5716's documentation!
-=======================================
+Documentación de **Keybot 5716**
+================================
+Bienvenidos a la documentación del equipo de FRC Keybot 5716, ubicados en
+Pahuca de Soto, Hidalgo, Mexico. Somos estudiantes del Instituto
+Tecnologico de Monterrey, campus Hidalgo, que buscan ser la llave a un
+mejor futuro.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+   :caption: Acerca de
 
+   Acerca
 
+.. toctree::
+   :caption: Areas de Keybot
+   :maxdepth: 1
+   
+   Programación <Areas/Programacion/Introduccion>
+   Mecánica <Areas/Mecanica/Introduccion>
+   Electrónica <Areas/Electronica/Introduccion>
+   Diseño <Areas/Diseño/Introduccion>
 
-Indices and tables
-==================
+Créditos de la documentación
+----------------------------
+Fundador de la documentación: Líder de programación 2021 - 2023 UwU
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+Equipo de programación
