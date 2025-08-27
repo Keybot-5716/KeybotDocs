@@ -24,6 +24,20 @@ mejor futuro.
    Electrónica <Areas/Electronica/Introduccion>
    Diseño <Areas/Diseño/Introduccion>
 
+.. toctree::
+   :caption: Software
+   :maxdepth: 1
+
+   Introduccion al software <Other/Software/Introduccion>
+   ¿Cómo crear un proyecto? <Other/Software/CrearProyecto>
+   Información de la DriverStation <Other/Software/DriverStation>
+   Información de las Networktables <Other/Software/Networktables>
+   Actualizar la radio <Other/Software/RadioConfig>
+   Guía de Github <Other/Software/GithubGuia>
+   Información de la limelight <Other/Software/Limelight>
+   Información de REV <Other/Software/Rev>
+   Información de TalonFX <Other/Software/TalonFX>
+
 Créditos de la documentación
 ----------------------------
 Fundador de la documentación: Líder de programación 2021 - 2023 UwU
