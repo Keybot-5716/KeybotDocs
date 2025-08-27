@@ -61,7 +61,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Introduccion.html">Introduccion al software</a></li>
 <li class="toctree-l1"><a class="reference internal" href="CrearProyecto.html">¿Cómo crear un proyecto?</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Información de la DriverStation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Información de la DriverStation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#que-es">¿Qué es?</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="Networktables.html">Información de las Networktables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="RadioConfig.html">Actualizar la radio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="GithubGuia.html">Guía de Github</a></li>
@@ -96,6 +99,28 @@
              
   <section id="configuracion-de-la-drive-station">
 <h1>Configuración de la Drive Station<a class="headerlink" href="#configuracion-de-la-drive-station" title="Link to this heading"></a></h1>
+<section id="que-es">
+<h2>¿Qué es?<a class="headerlink" href="#que-es" title="Link to this heading"></a></h2>
+<p>La <strong>DriverStation</strong> es la aplicación donde se puede prender/apagar los modos del robot.
+Hay que saber que el robot tiene los siguientes modos:</p>
+<ol class="arabic simple">
+<li><p><strong>Teleoperado:</strong> Es el modo donde los <strong>Drivers</strong> lo pueden manejar.</p></li>
+<li><p><strong>Autónomo:</strong> Es el modo donde el robot se maneja autónomamente.</p></li>
+<li><p><strong>Test:</strong> Este modo es especial, ya que en código puedes estables que ciertas funciones sean de puras pruebas, es decir, puedes hacer que cierta parte del código sólamente se pueda ejecutar en este modo.</p></li>
+<li><p><strong>Práctica:</strong> Este modo se usa para simular una partida real, es decir, tiene cronometrado el <strong>Autonomous mode</strong>, el <strong>Teleop mode</strong> y el <strong>ending</strong> del match.</p></li>
+</ol>
+<p>Ahora, el menú de la <strong>DriverStation</strong> la deben de visualizar algo así:</p>
+<p><em>imagen</em></p>
+<p>Y por este lado lateral podremos observar los cambios de modo del robot.</p>
+<p>Para que el robot pueda funcionar, debe pasar por los <strong>3</strong> semáforos por así decirlo.</p>
+<ol class="arabic simple">
+<li><p>La computadora esté conectada a la radio del robot (Solo una computadora)</p></li>
+<li><p>El código del robot se haya subido correctamente a la <strong>roboRIO</strong></p></li>
+<li><p>Tengan algún <strong>joystick</strong> conectado.</p></li>
+</ol>
+<p>En el caso de que todo lo anterior se cumpla, entonces al presionar <strong>Enable</strong> debería habilitarse el uso del modo del robot:
+<em>imagen</em></p>
+</section>
 </section>
 
 
@@ -109,7 +134,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2025, Equipo de programacion.</p>
+    <p>&#169; Copyright 2025, Keybot 5716.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

@@ -1,8 +1,13 @@
 ¿Cómo crear un nuevo proyecto?
 ==============================
 
-.. note:: Hola k ase
+Programas necesarios
+--------------------
 
-.. warning:: Hola k pasa
+Para poder generar un proyecto, 
 
-.. important:: K pasa broo
+.. note:: Esta es una nota
+
+.. warning:: Esta es una advertencia
+
+.. important:: Es una recomendación
