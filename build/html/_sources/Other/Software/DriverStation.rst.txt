@@ -1,5 +1,5 @@
-Configuración de la Drive Station
-=================================
+Configuración de la Driver Station
+==================================
 
 ¿Qué es?
 --------

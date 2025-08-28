@@ -38,6 +38,13 @@ mejor futuro.
    Información de REV <Other/Software/Rev>
    Información de TalonFX <Other/Software/TalonFX>
 
+.. toctree::
+   :caption: Categoría FTC
+   :maxdepth: 1
+
+   Introducción a FTC <Other/FTC/Introduccion>
+   Códigos de FTC <Other/FTC/CodigosFTC>
+
 Créditos de la documentación
 ----------------------------
 Fundador de la documentación: Líder de programación 2021 - 2023 UwU
