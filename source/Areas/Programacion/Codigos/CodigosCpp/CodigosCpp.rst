@@ -9,7 +9,7 @@ Durante la existencia del equipo Keybot 5716, desde su fundación en
 temporada y los mecanismos desarrollados para este mismo. Cabe destacar
 que a partir del *Guadalajara Off-Season (2022)* el codigo de robot paso
 de **Python a C++**, por lo que tanto el robot **Solaris** como el robot
-**Marte** fueron programados en Java.
+**Marte** fueron programados en C++.
 
 Codigo Base
 -----------
