@@ -48,9 +48,14 @@ mejor futuro.
 Créditos de la documentación
 ----------------------------
 Fundador de la documentación: Líder de programación 2021 - 2023 UwU
+
 Líder de programación 2024-2025 / Vicepresi 2025-2026 Ruben :O
+
 Líder de programación 2025-2026 Jorge :O
 
-Equipo de programación
+
+**Equipo de programación**
+
 German :)
+
 Isju :O
