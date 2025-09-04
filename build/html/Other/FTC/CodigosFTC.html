@@ -103,92 +103,98 @@
   <section id="codigos-de-ftc">
 <h1>Códigos de FTC<a class="headerlink" href="#codigos-de-ftc" title="Link to this heading"></a></h1>
 <div class="sphinx-tabs docutils container">
-<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0"><strong>Autonomous.java</strong></button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><blockquote>
-<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span>
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0"><strong>Autonomous.java</strong></button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">org.firstinspires.ftc.teamcode</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.qualcomm.robotcore.eventloop.opmode.LinearOpMode</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.qualcomm.robotcore.hardware.Servo</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.qualcomm.robotcore.hardware.CRServo</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.qualcomm.robotcore.eventloop.opmode.Autonomous</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.qualcomm.robotcore.hardware.DcMotor</span><span class="p">;</span>
+
+<span class="nd">@Autonomous</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Prueba3</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">LinearOpMode</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">DcMotor</span><span class="w"> </span><span class="n">leftDrive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">DcMotor</span><span class="w"> </span><span class="n">rightDrive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">DcMotor</span><span class="w"> </span><span class="n">arm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">DcMotor</span><span class="w"> </span><span class="n">wrist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Servo</span><span class="w"> </span><span class="n">claw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">CRServo</span><span class="w"> </span><span class="n">intake</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ARM_POSITION_INIT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">250</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">ARM_POSITION_EXTEND</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3815</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">WRIST_POSITION_INIT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">WRIST_POSITION_EXTEND</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">265</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">CLAW_OPEN_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.5</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">CLAW_CLOSED_POSITION</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="nd">@Override</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">runOpMode</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">leftDrive</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;leftDrive&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">rightDrive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rightDrive&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">arm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;arm&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">wrist</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;wrist&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">claw</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">Servo</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;claw&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">intake</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hardwareMap</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">CRServo</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;intake&quot;</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Reset encoders</span>
+<span class="w">        </span><span class="n">leftDrive</span><span class="p">.</span><span class="na">setMode</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">RunMode</span><span class="p">.</span><span class="na">STOP_AND_RESET_ENCODER</span><span class="p">);</span>
+<span class="w">        </span><span class="n">rightDrive</span><span class="p">.</span><span class="na">setMode</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">RunMode</span><span class="p">.</span><span class="na">STOP_AND_RESET_ENCODER</span><span class="p">);</span>
+<span class="w">        </span><span class="n">arm</span><span class="p">.</span><span class="na">setMode</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">RunMode</span><span class="p">.</span><span class="na">STOP_AND_RESET_ENCODER</span><span class="p">);</span>
+<span class="w">        </span><span class="n">wrist</span><span class="p">.</span><span class="na">setMode</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">RunMode</span><span class="p">.</span><span class="na">STOP_AND_RESET_ENCODER</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Motores de drive sin encoder</span>
+<span class="w">        </span><span class="n">leftDrive</span><span class="p">.</span><span class="na">setMode</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">RunMode</span><span class="p">.</span><span class="na">RUN_WITHOUT_ENCODER</span><span class="p">);</span>
+<span class="w">        </span><span class="n">rightDrive</span><span class="p">.</span><span class="na">setMode</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">RunMode</span><span class="p">.</span><span class="na">RUN_WITHOUT_ENCODER</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">leftDrive</span><span class="p">.</span><span class="na">setDirection</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">Direction</span><span class="p">.</span><span class="na">REVERSE</span><span class="p">);</span>
+<span class="w">        </span><span class="n">rightDrive</span><span class="p">.</span><span class="na">setDirection</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">Direction</span><span class="p">.</span><span class="na">FORWARD</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">leftDrive</span><span class="p">.</span><span class="na">setZeroPowerBehavior</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">ZeroPowerBehavior</span><span class="p">.</span><span class="na">BRAKE</span><span class="p">);</span>
+<span class="w">        </span><span class="n">rightDrive</span><span class="p">.</span><span class="na">setZeroPowerBehavior</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">ZeroPowerBehavior</span><span class="p">.</span><span class="na">BRAKE</span><span class="p">);</span>
+<span class="w">        </span><span class="n">arm</span><span class="p">.</span><span class="na">setZeroPowerBehavior</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">ZeroPowerBehavior</span><span class="p">.</span><span class="na">BRAKE</span><span class="p">);</span>
+<span class="w">        </span><span class="n">wrist</span><span class="p">.</span><span class="na">setZeroPowerBehavior</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">ZeroPowerBehavior</span><span class="p">.</span><span class="na">BRAKE</span><span class="p">);</span>
+
+<span class="w">        </span><span class="n">telemetry</span><span class="p">.</span><span class="na">addData</span><span class="p">(</span><span class="s">&quot;Status&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Ready for Autonomous&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">telemetry</span><span class="p">.</span><span class="na">update</span><span class="p">();</span>
+
+<span class="w">        </span><span class="n">waitForStart</span><span class="p">();</span>
+
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">opModeIsActive</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="c1">// --- AUTÓNOMO ---</span>
+<span class="w">            </span><span class="n">claw</span><span class="p">.</span><span class="na">setPosition</span><span class="p">(</span><span class="n">CLAW_CLOSED_POSITION</span><span class="p">);</span>
+<span class="w">            </span><span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">arm</span><span class="p">.</span><span class="na">setTargetPosition</span><span class="p">(</span><span class="n">ARM_POSITION_EXTEND</span><span class="p">);</span>
+<span class="w">            </span><span class="n">arm</span><span class="p">.</span><span class="na">setMode</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">RunMode</span><span class="p">.</span><span class="na">RUN_TO_POSITION</span><span class="p">);</span>
+<span class="w">            </span><span class="n">arm</span><span class="p">.</span><span class="na">setPower</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">wrist</span><span class="p">.</span><span class="na">setTargetPosition</span><span class="p">(</span><span class="n">WRIST_POSITION_EXTEND</span><span class="p">);</span>
+<span class="w">            </span><span class="n">wrist</span><span class="p">.</span><span class="na">setMode</span><span class="p">(</span><span class="n">DcMotor</span><span class="p">.</span><span class="na">RunMode</span><span class="p">.</span><span class="na">RUN_TO_POSITION</span><span class="p">);</span>
+<span class="w">            </span><span class="n">wrist</span><span class="p">.</span><span class="na">setPower</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">sleep</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">claw</span><span class="p">.</span><span class="na">setPosition</span><span class="p">(</span><span class="n">CLAW_OPEN_POSITION</span><span class="p">);</span>
+<span class="w">            </span><span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">arm</span><span class="p">.</span><span class="na">setTargetPosition</span><span class="p">(</span><span class="n">ARM_POSITION_INIT</span><span class="p">);</span>
+<span class="w">            </span><span class="n">wrist</span><span class="p">.</span><span class="na">setTargetPosition</span><span class="p">(</span><span class="n">WRIST_POSITION_INIT</span><span class="p">);</span>
+<span class="w">            </span><span class="n">sleep</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">arm</span><span class="p">.</span><span class="na">setPower</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="n">wrist</span><span class="p">.</span><span class="na">setPower</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="n">leftDrive</span><span class="p">.</span><span class="na">setPower</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">            </span><span class="n">rightDrive</span><span class="p">.</span><span class="na">setPower</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">            </span><span class="n">telemetry</span><span class="p">.</span><span class="na">addData</span><span class="p">(</span><span class="s">&quot;Status&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Autonomous Complete&quot;</span><span class="p">);</span>
+<span class="w">            </span><span class="n">telemetry</span><span class="p">.</span><span class="na">update</span><span class="p">();</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-</div></blockquote>
-<p>package org.firstinspires.ftc.teamcode;</p>
-<p>import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.hardware.CRServo;
-import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.hardware.DcMotor;</p>
-<p>&#64;Autonomous
-public class Prueba3 extends LinearOpMode {</p>
-<blockquote>
-<div><p>private DcMotor leftDrive = null;
-private DcMotor rightDrive = null;
-private DcMotor arm = null;
-private DcMotor wrist = null;
-private Servo claw = null;
-private CRServo intake = null;</p>
-<p>private static final int ARM_POSITION_INIT = 250;
-private static final int ARM_POSITION_EXTEND = 3815;
-private static final int WRIST_POSITION_INIT = 0;
-private static final int WRIST_POSITION_EXTEND = 265;</p>
-<p>private static final double CLAW_OPEN_POSITION = 0.5;
-private static final double CLAW_CLOSED_POSITION = 1;</p>
-<p>&#64;Override
-public void runOpMode() {</p>
-<blockquote>
-<div><p>leftDrive  = hardwareMap.get(DcMotor.class, “leftDrive”);
-rightDrive = hardwareMap.get(DcMotor.class, “rightDrive”);
-arm = hardwareMap.get(DcMotor.class, “arm”);
-wrist = hardwareMap.get(DcMotor.class, “wrist”);
-claw = hardwareMap.get(Servo.class, “claw”);
-intake = hardwareMap.get(CRServo.class, “intake”);</p>
-<p>// Reset encoders
-leftDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-rightDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-wrist.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);</p>
-<p>// Motores de drive sin encoder (para mover con potencias)
-leftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
-rightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);</p>
-<p>leftDrive.setDirection(DcMotor.Direction.REVERSE);
-rightDrive.setDirection(DcMotor.Direction.FORWARD);</p>
-<p>leftDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-rightDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
-wrist.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);</p>
-<p>telemetry.addData(“Status”, “Ready for Autonomous”);
-telemetry.update();</p>
-<p>waitForStart();</p>
-<dl>
-<dt>if (opModeIsActive()) {</dt><dd><p>// — AUTÓNOMO —
-// 1. Cerrar garra
-claw.setPosition(CLAW_CLOSED_POSITION);
-sleep(1000);</p>
-<p>// 2. Extender brazo y muñeca
-arm.setTargetPosition(ARM_POSITION_EXTEND);
-arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-arm.setPower(1);</p>
-<p>wrist.setTargetPosition(WRIST_POSITION_EXTEND);
-wrist.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-wrist.setPower(1);</p>
-<p>sleep(2000);</p>
-<p>// 3. Abrir garra
-claw.setPosition(CLAW_OPEN_POSITION);
-sleep(1000);</p>
-<p>// 4. Regresar brazo y muñeca
-arm.setTargetPosition(ARM_POSITION_INIT);
-wrist.setTargetPosition(WRIST_POSITION_INIT);
-sleep(2000);</p>
-<p>// 5. Detener motores
-arm.setPower(0);
-wrist.setPower(0);
-leftDrive.setPower(0);
-rightDrive.setPower(0);</p>
-<p>telemetry.addData(“Status”, “Autonomous Complete”);
-telemetry.update();</p>
-</dd>
-</dl>
-<p>}</p>
-</div></blockquote>
-<p>}</p>
-</div></blockquote>
-<p>}</p>
 </div></div>
 </section>
 
