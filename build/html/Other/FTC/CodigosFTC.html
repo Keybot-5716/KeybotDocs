@@ -9,13 +9,15 @@
   <title>Códigos de FTC &mdash; Keybot 5716 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
-      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../_static/tabs.js?v=3030b3cb"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -100,7 +102,94 @@
              
   <section id="codigos-de-ftc">
 <h1>Códigos de FTC<a class="headerlink" href="#codigos-de-ftc" title="Link to this heading"></a></h1>
-<p>Aquí van los códigos</p>
+<div class="sphinx-tabs docutils container">
+<div aria-label="Tabbed content" class="closeable" role="tablist"><button aria-controls="panel-0-0-0" aria-selected="true" class="sphinx-tabs-tab" id="tab-0-0-0" name="0-0" role="tab" tabindex="0"><strong>Autonomous.java</strong></button></div><div aria-labelledby="tab-0-0-0" class="sphinx-tabs-panel" id="panel-0-0-0" name="0-0" role="tabpanel" tabindex="0"><blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>package org.firstinspires.ftc.teamcode;</p>
+<p>import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.hardware.CRServo;
+import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.hardware.DcMotor;</p>
+<p>&#64;Autonomous
+public class Prueba3 extends LinearOpMode {</p>
+<blockquote>
+<div><p>private DcMotor leftDrive = null;
+private DcMotor rightDrive = null;
+private DcMotor arm = null;
+private DcMotor wrist = null;
+private Servo claw = null;
+private CRServo intake = null;</p>
+<p>private static final int ARM_POSITION_INIT = 250;
+private static final int ARM_POSITION_EXTEND = 3815;
+private static final int WRIST_POSITION_INIT = 0;
+private static final int WRIST_POSITION_EXTEND = 265;</p>
+<p>private static final double CLAW_OPEN_POSITION = 0.5;
+private static final double CLAW_CLOSED_POSITION = 1;</p>
+<p>&#64;Override
+public void runOpMode() {</p>
+<blockquote>
+<div><p>leftDrive  = hardwareMap.get(DcMotor.class, “leftDrive”);
+rightDrive = hardwareMap.get(DcMotor.class, “rightDrive”);
+arm = hardwareMap.get(DcMotor.class, “arm”);
+wrist = hardwareMap.get(DcMotor.class, “wrist”);
+claw = hardwareMap.get(Servo.class, “claw”);
+intake = hardwareMap.get(CRServo.class, “intake”);</p>
+<p>// Reset encoders
+leftDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+rightDrive.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+arm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+wrist.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);</p>
+<p>// Motores de drive sin encoder (para mover con potencias)
+leftDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+rightDrive.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);</p>
+<p>leftDrive.setDirection(DcMotor.Direction.REVERSE);
+rightDrive.setDirection(DcMotor.Direction.FORWARD);</p>
+<p>leftDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+rightDrive.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+arm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+wrist.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);</p>
+<p>telemetry.addData(“Status”, “Ready for Autonomous”);
+telemetry.update();</p>
+<p>waitForStart();</p>
+<dl>
+<dt>if (opModeIsActive()) {</dt><dd><p>// — AUTÓNOMO —
+// 1. Cerrar garra
+claw.setPosition(CLAW_CLOSED_POSITION);
+sleep(1000);</p>
+<p>// 2. Extender brazo y muñeca
+arm.setTargetPosition(ARM_POSITION_EXTEND);
+arm.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+arm.setPower(1);</p>
+<p>wrist.setTargetPosition(WRIST_POSITION_EXTEND);
+wrist.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+wrist.setPower(1);</p>
+<p>sleep(2000);</p>
+<p>// 3. Abrir garra
+claw.setPosition(CLAW_OPEN_POSITION);
+sleep(1000);</p>
+<p>// 4. Regresar brazo y muñeca
+arm.setTargetPosition(ARM_POSITION_INIT);
+wrist.setTargetPosition(WRIST_POSITION_INIT);
+sleep(2000);</p>
+<p>// 5. Detener motores
+arm.setPower(0);
+wrist.setPower(0);
+leftDrive.setPower(0);
+rightDrive.setPower(0);</p>
+<p>telemetry.addData(“Status”, “Autonomous Complete”);
+telemetry.update();</p>
+</dd>
+</dl>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</div></div>
 </section>
 
 
