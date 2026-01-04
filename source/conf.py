@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Keybot 5716'
-copyright = '2025, Keybot 5716'
+copyright = '2026, Keybot 5716'
 author = 'Equipo de programacion'
 release = '1.0'
 
