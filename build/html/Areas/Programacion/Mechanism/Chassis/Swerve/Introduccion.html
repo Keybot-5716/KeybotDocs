@@ -1,0 +1,191 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introducción al Swerve &mdash; Keybot 5716 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Introducción a Mecanum" href="../Mecanum/Introduccion.html" />
+    <link rel="prev" title="Codigos previos del equipo en C++" href="../../../Codigos/CodigosCpp/CodigosCpp.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../../index.html" class="icon icon-home">
+            Keybot 5716
+              <img src="../../../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Acerca de</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Acerca.html">¿Qué es Keybot?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Acerca.html#nuestra-mision">Nuestra misión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Acerca.html#nuestra-vision">Nuestra visión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Acerca.html#nuestra-metas-y-objetivos">Nuestra metas y objetivos</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Areas de Keybot</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Introduccion.html">Programación</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Introduccion.html#introduccion">Introducción</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../Introduccion.html#tipos-de-chasis-para-programar">Tipos de chasis para programar</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Chasis Swerve</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#que-es-el-swerve">¿Qué es el Swerve?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ventajas">Ventajas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#desventajas">Desventajas</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../Mecanum/Introduccion.html">Chasis Mecanum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../TankDrive/Introduccion.html">Chasis Tank</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Mecanica/Introduccion.html">Mecánica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Electronica/Introduccion.html">Electrónica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Dise%C3%B1o/Introduccion.html">Diseño</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/Software/Introduccion.html">Introduccion al software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/Software/CrearProyecto.html">¿Cómo crear un proyecto?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/Software/DriverStation.html">Información de la DriverStation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/Software/Networktables.html">Información de las Networktables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/Software/RadioConfig.html">Actualizar la radio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/Software/GithubGuia.html">Guía de Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/Software/Limelight.html">Información de la limelight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/Software/Rev.html">Información de REV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/Software/TalonFX.html">Información de TalonFX</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Categoría FTC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/FTC/Introduccion.html">Introducción a FTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/FTC/CodigosFTC.html">Códigos de FTC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../../index.html">Keybot 5716</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Introduccion.html">Area de Programación (Keybot 5716)</a></li>
+      <li class="breadcrumb-item active">Introducción al Swerve</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../../_sources/Areas/Programacion/Mechanism/Chassis/Swerve/Introduccion.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduccion-al-swerve">
+<h1>Introducción al Swerve<a class="headerlink" href="#introduccion-al-swerve" title="Link to this heading"></a></h1>
+<section id="que-es-el-swerve">
+<h2>¿Qué es el Swerve?<a class="headerlink" href="#que-es-el-swerve" title="Link to this heading"></a></h2>
+<p>El <strong>Swerve</strong>, conocido como <strong>SwerveDriveTrain</strong> o <strong>SwerveDrive</strong>,es un tipo de chasis para la
+competencia. Este tiene la peculiaridad que permite mover el robot de manera
+omnidireccional, es decir, se puede mover hacia cualquier dirección sin restricciones.</p>
+</section>
+<section id="ventajas">
+<h2>Ventajas<a class="headerlink" href="#ventajas" title="Link to this heading"></a></h2>
+<p>¿Suena poderoso no? Este chasis es actualmente el mejor de la competencia, por lo que,
+es nuestra tarea exprimir sus capacidades para así poder tener ventaja sobre los demás
+equipos.</p>
+<p>1) <strong>Movilidad omnidireccional:</strong> El robot puede moverse hacia cualquier dirección.
+También, cabe recalcar que se puede mover sin girar el chasis, o girando su chasis.</p>
+<p>2) <strong>Alta maniobrabilidad:</strong> Para los <strong>drivers</strong>, este chasis les facilita mucho el
+control que tienen sobre los demás robots, ya que pueden defender y esquivar con mucha
+facilidad, además que pueden hacer puntos de manera rápida, eficiente y precisa.</p>
+<p>3) <strong>Control de trayectoria:</strong> Ya hablamos de la precisión, pues, este chasis puede
+alinearse muy rápido a objetivos para aumentar la consisntencia aún más.</p>
+<p>4) <strong>Agilidad extrema:</strong> Este chasis permite al driver acelerar, frenar y cambiar de
+dirección muy rápido.</p>
+<p>5) <strong>Uso eficiente:</strong> No es necesario girar el chasis para mover la dirección, por lo
+que, en zonas reducidas es bastante eficiente.</p>
+</section>
+<section id="desventajas">
+<h2>Desventajas<a class="headerlink" href="#desventajas" title="Link to this heading"></a></h2>
+<p>1) <strong>Complejidad:</strong> Una de las desventajas muy claras es la complejidad, no sólo en la parte mecánica y
+eléctrica, sino que tiene un énfasis en su programación. Esto hace que muchos equipos
+que no tienen la experiencia, simplemente no seleccionan este tipo de chasis.</p>
+<p>2) <strong>Alto costo:</strong> El chasis tipo <strong>Swerve</strong> es bastante caro, ya que, además del chasis mecánico, está la
+parte de los <strong>8</strong> motores, el <strong>encoder relativo</strong> y el <strong>encoder relativo</strong> por cada motor, y un <strong>giroscopio</strong>.</p>
+<p>3) <strong>Programación:</strong> Ya hablamos de la complejidad de la programación, pero le vamos a dar un énfasis en el control
+de PID, la cinemática avanzada y la integración constante con el giroscopio.</p>
+<p>4) <strong>Mantenimiento:</strong> <em>Mucho poder conlleva una gran responsabilidad</em>. El Swerve es delicado, es decir, es vulnerable
+a cualquier cosa que se atore en los engranes, o al déficit de grasa en los engranes, por lo que, tienen que tener la
+conciencia de mantener limpio el chasis.</p>
+<p>5) <strong>Consumo de energía:</strong> La swerve opera <strong>8</strong> motores y algunos sensores, por lo que, se tiene que optimizar el
+consumo de energía del robot, además, una pila no es suficiente para toda la competencia, sino que solo les rinde <strong>una
+pila por partida</strong>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../../Codigos/CodigosCpp/CodigosCpp.html" class="btn btn-neutral float-left" title="Codigos previos del equipo en C++" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../Mecanum/Introduccion.html" class="btn btn-neutral float-right" title="Introducción a Mecanum" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Keybot 5716.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

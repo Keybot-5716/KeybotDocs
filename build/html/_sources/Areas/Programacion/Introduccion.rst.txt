@@ -22,14 +22,21 @@ Introducción
 
    Links Utiles <LinksUtiles>
    Códigos C++ <Codigos/CodigosCpp/CodigosCpp>
+   Códigos Java <Codigos/CodigosJava/Introduccion>
 
-Tipos de chasis para programar
-------------------------------
+Tipos de mecanismos para programar
+----------------------------------
 .. toctree::
-  :maxdepth: 1
+  :maxdepth: 2
 
-  Chasis Swerve <Swerve/Introduccion>
+  Chasis <Mechanism/Chassis/Introduccion>
 
-  Chasis Mecanum <Mecanum/Introduccion>
+  Elevador <Mechanism/Elevator/Introduccion>
 
-  Chasis Tank <TankDrive/Introduccion>
+  Brazo <Mechanism/Arm/Introduccion>
+
+  Muñeca <Mechanism/Wrist/Introduccion>
+
+  Torreta <Mechanism/Turret/Introduccion>
+
+  Rodillo <Mechanism/Rollers/Introduccion>

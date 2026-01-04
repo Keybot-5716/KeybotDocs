@@ -10,7 +10,12 @@ de otros agregados como extra que de igual forma pueden ser utiles:
 -  `Codigo Fuente de WPILib <https://github.com/wpilibsuite/allwpilib>`__
 -  `Documentación de WPI <https://docs.wpilib.org/en/latest/>`__
 -  `Documentación de WPILib C++ <https://github.wpilib.org/allwpilib/docs/development/cpp/index.html>`__
--  `Documentación de CTRE <https://v5.docs.ctr-electronics.com/en/latest/>`__
+-  `Documentación de WPILib Java <https://github.wpilib.org/allwpilib/docs/development/java/>`__
+-  `Documentación de PHOENIX 5 (CTRE) <https://v5.docs.ctr-electronics.com/en/latest/>`__
+-  `Documentación de PHOENIX 6 (CTRE) <https://v6.docs.ctr-electronics.com/en/latest/>`__
+-  `API PHOENIX 6 (Java) <https://api.ctr-electronics.com/phoenix6/release/java/>`__
+-  `Documentación de REV Robotics <https://docs.revrobotics.com/revlib/>`__
+-  `Documentación de Kauai Labs (NavX) <https://pdocs.kauailabs.com/navx-mxp/>`__
+-  `Documentación de Advantage Kit <https://github.com/Mechanical-Advantage/AdvantageKit>`__
 -  `Documentación de Limelight <https://docs.limelightvision.io/en/latest/>`__
--  `Documentación de PhotonVision <https://docs.wpilib.org/en/latest/>`__
--  `Live Share para colaborar en VS Code <https://code.visualstudio.com/learn/collaboration/live-share>`__
+-  `Documentación de PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/index.html>`__
