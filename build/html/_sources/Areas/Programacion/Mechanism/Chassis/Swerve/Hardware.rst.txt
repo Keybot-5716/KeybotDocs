@@ -105,3 +105,12 @@ Rev Robotics:
 =============
 
 - `Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`_
+
+Giroscopio
+**********
+
+El giroscopio es un sensor que permite medir la orientación del robot, es decir, hacia dónde está apuntando el chasis.
+
+- `Pigeon IMU <https://store.ctr-electronics.com/products/pigeon-2?srsltid=AfmBOorIphF2JxvLszxcC3AeJZ7ykJrPGMUrL264LeUxyuWNMpOKz8-u>`_
+
+- `NavX-MXP <https://andymark.com/products/navx2-mxp-robotics-navigation-sensor>`_

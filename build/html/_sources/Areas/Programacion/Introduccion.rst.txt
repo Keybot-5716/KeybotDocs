@@ -24,6 +24,13 @@ Introducción
    Códigos C++ <Codigos/CodigosCpp/CodigosCpp>
    Códigos Java <Codigos/CodigosJava/Introduccion>
 
+Documentación de la WPILIB
+--------------------------
+.. toctree::
+  :maxdepth: 1
+
+  Introducción a la WPILIB <Wpilib/Introduccion>
+
 Tipos de mecanismos para programar
 ----------------------------------
 .. toctree::

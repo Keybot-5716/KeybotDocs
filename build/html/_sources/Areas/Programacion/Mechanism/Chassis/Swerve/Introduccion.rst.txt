@@ -1,15 +1,16 @@
+######################
 Introducción al Swerve
-======================
+######################
 
 ¿Qué es el Swerve?
-------------------
+******************
 
 El **Swerve**, conocido como **SwerveDriveTrain** o **SwerveDrive**,es un tipo de chasis para la
 competencia. Este tiene la peculiaridad que permite mover el robot de manera 
 omnidireccional, es decir, se puede mover hacia cualquier dirección sin restricciones.
 
 Ventajas
---------
+********
 
 ¿Suena poderoso no? Este chasis es actualmente el mejor de la competencia, por lo que,
 es nuestra tarea exprimir sus capacidades para así poder tener ventaja sobre los demás
@@ -32,7 +33,7 @@ dirección muy rápido.
 que, en zonas reducidas es bastante eficiente.
 
 Desventajas
------------
+***********
 
 1) **Complejidad:** Una de las desventajas muy claras es la complejidad, no sólo en la parte mecánica y 
 eléctrica, sino que tiene un énfasis en su programación. Esto hace que muchos equipos 
@@ -52,10 +53,12 @@ conciencia de mantener limpio el chasis.
 consumo de energía del robot, además, una pila no es suficiente para toda la competencia, sino que solo les rinde **una
 pila por partida**.
 
-Swerve
-------
+Documentación pre-software
+**************************
+
 .. toctree::
   :maxdepth: 1
 
-    Hardware <Hardware>
-    
+  Hardware <Hardware>
+
+  Prerequisitos de Software <PrerequisitesSoftware>
