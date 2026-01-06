@@ -51,3 +51,13 @@ conciencia de mantener limpio el chasis.
 5) **Consumo de energía:** La swerve opera **8** motores y algunos sensores, por lo que, se tiene que optimizar el 
 consumo de energía del robot, además, una pila no es suficiente para toda la competencia, sino que solo les rinde **una
 pila por partida**.
+
+Documentación pre-software
+--------------------------
+.. toctree::
+  :maxdepth: 1
+
+    Hardware <Hardware>
+
+    Prerequisitos de Software <PrerequisitesSoftware>
+    
