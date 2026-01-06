@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+#################################
 Documentación de **Keybot 5716**
-================================
+#################################
 Bienvenidos a la documentación del equipo de FRC Keybot 5716, ubicados en
 Pahuca de Soto, Hidalgo, Mexico. Somos estudiantes del Instituto
 Tecnologico de Monterrey, campus Hidalgo, que buscan ser la llave a un
@@ -46,7 +47,7 @@ mejor futuro.
    Códigos de FTC <Other/FTC/CodigosFTC>
 
 Créditos de la documentación
-----------------------------
+*****************************
 Fundador de la documentación: Líder de programación 2021 - 2023 UwU
 
 Líder de programación 2024-2025 / Vicepresi 2025-2026 Ruben :O

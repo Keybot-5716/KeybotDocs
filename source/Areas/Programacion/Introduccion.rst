@@ -1,8 +1,9 @@
+###################################
 Area de Programación (Keybot 5716)
-==================================
+###################################
 
 Introducción
-------------
+*************
 
 | **Bienvenidos!**
 | Dentro de First, el área Programación es una de las más importantes en
@@ -25,14 +26,21 @@ Introducción
    Códigos Java <Codigos/CodigosJava/Introduccion>
 
 Documentación de la WPILIB
---------------------------
+***************************
 .. toctree::
   :maxdepth: 1
 
   Introducción a la WPILIB <Wpilib/Introduccion>
 
+Documentacion de Advantage Kit
+*******************************
+.. toctree::
+  :maxdepth: 1
+
+  Introducción a Advantage Kit <AdvantageKit/Introduccion>
+
 Tipos de mecanismos para programar
-----------------------------------
+***********************************
 .. toctree::
   :maxdepth: 2
 

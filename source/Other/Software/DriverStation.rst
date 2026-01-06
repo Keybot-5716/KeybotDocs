@@ -1,8 +1,9 @@
+###################################
 Configuración de la Driver Station
-==================================
+###################################
 
 ¿Qué es?
---------
+*********
 
 La **DriverStation** es la aplicación donde se puede prender/apagar los modos del robot.
 Hay que saber que el robot tiene los siguientes modos:

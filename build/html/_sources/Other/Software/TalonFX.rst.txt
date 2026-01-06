@@ -1,8 +1,9 @@
+#################################
 Datos importantes de los TalonFX
-================================
+#################################
 
 ¿Qué es TalonFX?
-----------------
+*****************
 
 Si conoces alguno de los siguientes motores:
 

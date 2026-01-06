@@ -1,5 +1,6 @@
+################
 ¿Qué es Keybot?
-===============
+################
 
 El equipo de KEYBOT 5716 es considerado más que un equipo de robótica,
 más que un robot, más que otra parte de FIRST, pues la verdad es que es
@@ -9,23 +10,26 @@ representar a México y al Tecnológico de Monterrey donde demostremos
 nuestra capacidad de resolver cualquier reto u obstáculo que se nos
 interponga, enfrentándolo de la manera más creativa y divertida.
 
+###############
 Nuestra misión
-===============
+###############
 
 *“Inspirar a los jóvenes a innovar dentro de la tecnología, ciencia y
 área de negocios, despertando su creatividad y motivación a través de la
 robótica”* – **KEYBOT**
 
+###############
 Nuestra visión
-===============
+###############
 
 *“Ser uno de los mejores equipos, reconocidos internacionalmente por
 nuestro liderazgo dentro de las distintas áreas que conforman nuestra
 comunidad, y por nuestra creatividad e innovación en el sector
 industrial y tecnológico.”* – **KEYBOT**
 
+##########################
 Nuestra metas y objetivos
-=========================
+##########################
 
 -  Tener la posibilidad de asistir a más de un regional, esto
    enriquecería la experiencia del equipo trabajando bajo presión, así

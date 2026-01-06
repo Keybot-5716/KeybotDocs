@@ -1,7 +1,8 @@
+###################
 Introducción a FTC
-==================
+###################
 
 ¿Qué es FTC?
-------------
+************
 
-Nose
+Es una categoría de robótica diseñada por FIRST para niños de secundaria y preparatoria.
