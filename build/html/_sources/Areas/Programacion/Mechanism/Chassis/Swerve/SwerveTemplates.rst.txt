@@ -24,3 +24,8 @@ Links de las Plantillas
 
     - Así como puede generar un código completo de swerve, también puedes únicamente generar las constantes, estas se suelen usar en las plantillas de terceros como las de Advantage Kit. Se llaman TunerConstants.
 
+- `Maple Sim Swerve Skeleton <https://github.com/Shenzhen-Robotics-Alliance/Maple-Swerve-Skeleton>`_
+
+    - Esta es una plantilla que utiliza el código generado por CTRE y le agrega las funcionalidades de **Maple Sim** para poder simular el swerve con físicas realistas.
+
+    - De igual manera, pueden encontrar más templates que utilizan **Maple Sim** en el `Maple Sim Repository <https://github.com/Shenzhen-Robotics-Alliance/maple-sim>`_

@@ -20,3 +20,8 @@ a varios puntos importantes y dar ejemplos prácticos para que puedan entender m
 en un código de FRC real.
 
 .. important:: No vamos a traducir la librería, simplemente vamos a explicar lo que nosotros usamos de ella, pero siempre vamos a dar la referencia de ciertos temas para que puedan consultarlo desde la documentación oficial 
+
+Características de Advantage Kit
+**********************************
+
+Algunas de las funciones que implementa **Advantage Kit** son: 

@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Java en FRC &mdash; Keybot 5716 1.0 documentation</title>
+  <title>Códigos del equipo en Java &mdash; Keybot 5716 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
 
@@ -19,7 +19,7 @@
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="Chasis en FRC" href="../../Mechanism/Chassis/Introduccion.html" />
+    <link rel="next" title="Introducción a la WPILIB" href="../../Wpilib/Introduccion.html" />
     <link rel="prev" title="Codigos previos del equipo en C++" href="../CodigosCpp/CodigosCpp.html" /> 
 </head>
 
@@ -56,9 +56,14 @@
 <li class="toctree-l2 current"><a class="reference internal" href="../../Introduccion.html#introduccion">Introducción</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../../LinksUtiles.html">Links Utiles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../CodigosCpp/CodigosCpp.html">Códigos C++</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Códigos Java</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Códigos Java</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#eros-off-season-2025">Eros - Off season 2025</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../Introduccion.html#documentacion-de-la-wpilib">Documentación de la WPILIB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Introduccion.html#documentacion-de-advantage-kit">Documentacion de Advantage Kit</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Introduccion.html#tipos-de-mecanismos-para-programar">Tipos de mecanismos para programar</a></li>
 </ul>
 </li>
@@ -99,7 +104,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
           <li class="breadcrumb-item"><a href="../../Introduccion.html">Area de Programación (Keybot 5716)</a></li>
-      <li class="breadcrumb-item active">Java en FRC</li>
+      <li class="breadcrumb-item active">Códigos del equipo en Java</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../_sources/Areas/Programacion/Codigos/CodigosJava/Introduccion.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -109,8 +114,39 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="java-en-frc">
-<h1>Java en FRC<a class="headerlink" href="#java-en-frc" title="Link to this heading"></a></h1>
+  <section id="codigos-del-equipo-en-java">
+<h1>Códigos del equipo en Java<a class="headerlink" href="#codigos-del-equipo-en-java" title="Link to this heading"></a></h1>
+<p>Una de las transformaciones grandes que ha tenido Keybot en cuanto a programación, es el lenguaje usado.
+En 2024, vimos que un lenguaje se destacó por su facilidad de uso, comprensión y flexibilidad; esto sin
+mencionar que es el más popular dentro de toda la competencia, incluyendo que es el lenguaje con mayor
+documentación por esa misma razón. Estoy hablando de <strong>Java</strong>.</p>
+<p>En nuestro repositorio de GitHub, podrán encontrar los códigos usados en las temporadas con sus debidos
+nombres.</p>
+<p>Tenemos que aclarar algo, en el apartado de códigos en C++ podemos poner los códigos completos, ya que
+son códigos más sencillos en cuestión de estructura, pero en Java, los códigos son muchisimos más
+extensos, por lo que no podremos ponerlos completos, pero sí los enlaces a los repositorios para que
+puedan revisarlos de cerca.</p>
+<p>En cuestión a la documentación, no vamos a dar una explicación completa de cada código, ya que es demasiado,
+pero si vamos a dar una explicación general de su estructura y además vamos a dar en otras partes de la
+documentación ciertos ejemplos de muchos términos y puntos importantes que se usan en los códigos para que
+se puedan ir implementando en futuros códigos.</p>
+<section id="eros-off-season-2025">
+<h2>Eros - Off season 2025<a class="headerlink" href="#eros-off-season-2025" title="Link to this heading"></a></h2>
+<p>Para el 2025, no sólamente utilizamos Java, sino que implementamos una estructura de código más avanzada
+de lo que se solía hacer antes, implementando librerías de uso avanzado como Advantage Kit.</p>
+<p>Link del repositorio: <a class="reference external" href="https://github.com/Keybot-5716/Off-SeasonCode-2025">Eros 2025 Java</a></p>
+<p>Al ser un código más avanzado, es importante que sepan ciertos conceptos antes de empezar a revisarlo,
+por ello, les recomendamos dar una vuelta por la documentación antes de empezar a revisarlo.</p>
+<section id="caracteristicas-principales-del-codigo">
+<h3>Características principales del código:<a class="headerlink" href="#caracteristicas-principales-del-codigo" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Estructura de código basada en Command Based Programming y la arquitectura de Advantage Kit.</p></li>
+<li><p>Uso de Advantage Kit para logging avanzado.</p></li>
+<li><p>Uso de la plantilla <strong>TalonFX swerve</strong> y <strong>Vision</strong> de Advantage Kit.</p></li>
+<li><p>Uso de una máquina de estados.</p></li>
+</ul>
+</section>
+</section>
 </section>
 
 
@@ -118,7 +154,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../CodigosCpp/CodigosCpp.html" class="btn btn-neutral float-left" title="Codigos previos del equipo en C++" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../Mechanism/Chassis/Introduccion.html" class="btn btn-neutral float-right" title="Chasis en FRC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../../Wpilib/Introduccion.html" class="btn btn-neutral float-right" title="Introducción a la WPILIB" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

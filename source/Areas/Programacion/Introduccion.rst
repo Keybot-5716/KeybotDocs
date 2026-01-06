@@ -39,6 +39,13 @@ Documentacion de Advantage Kit
 
   Introducción a Advantage Kit <AdvantageKit/Introduccion>
 
+Documentación de Maple Sim
+*****************************
+.. toctree::
+  :maxdepth: 1
+
+  Introducción a Maple Sim <MapleSim/Introduccion>
+
 Tipos de mecanismos para programar
 ***********************************
 .. toctree::

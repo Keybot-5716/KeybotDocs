@@ -1,8 +1,9 @@
+##################################
 Codigos previos del equipo en C++
-=================================
+##################################
 
 Introducción
-------------
+*************
 
 Durante la existencia del equipo Keybot 5716, desde su fundación en
 2015, se han usado diferentes codigos adaptados para el robot de la
@@ -12,7 +13,7 @@ de **Python a C++**, por lo que tanto el robot **Solaris** como el robot
 **Marte** fueron programados en C++.
 
 Codigo Base
------------
+************
 
 Los robots funcionan gracias al framework conocido como **Timed Skeleton
 (Advanced)** que provee WPI en la libreria WPILib, este se consigue
