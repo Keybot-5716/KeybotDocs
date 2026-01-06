@@ -20,3 +20,5 @@ de otros agregados como extra que de igual forma pueden ser utiles:
 -  `Documentación de Advantage Kit <https://github.com/Mechanical-Advantage/AdvantageKit>`__
 -  `Documentación de Limelight <https://docs.limelightvision.io/en/latest/>`__
 -  `Documentación de PhotonVision <https://docs.photonvision.org/en/latest/docs/programming/photonlib/index.html>`__
+-  `Documentación de Maple Sim <https://shenzhen-robotics-alliance.github.io/maple-sim/>`__
+-  `Repositorio de Maple Sim <https://github.com/Shenzhen-Robotics-Alliance/maple-sim>`__

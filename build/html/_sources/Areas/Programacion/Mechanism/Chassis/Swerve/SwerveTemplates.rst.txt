@@ -1,0 +1,26 @@
+#############################
+Plantillas comunes de Swerve
+#############################
+
+Cada año las librerías se actualizan, por lo que es importante contar con código funcional antes de empezar+
+a desarrollar uno propio con muchas más funcioanlidades, por lo que, aquí les dejamos algunas
+plantillas útiles y comunes que pueden usar, ya sea como base, o para simplemente tener un swerve
+funcional y después agregarle más funcionalidades o modificarlo a su gusto.
+
+.. note:: Estos no son códigos propios, simplemente damos los links para que estén al tanto de que existen.
+
+Links de las Plantillas
+************************
+
+- `Advantage Kit Releases <https://github.com/Mechanical-Advantage/AdvantageKit/releases>`_
+
+    - Todas las templates de Advantage Kit las puedes encontrar en los releases de su repositorio del Advantage Kit.
+    
+    - Dentro de cada release, en los assets, encontrarás en archivo zip las templates disponibles.
+
+- `CTRE Swerve Project Generator <https://v6.docs.ctr-electronics.com/en/latest/docs/tuner/tuner-swerve/index.html>`_
+
+    - CTRE también cuenta con un generador de código para swerve. Eso sí, considera que es solo una plantilla, no utiliza librerías como Advantage Kit, por lo que recomiendo modificarla como nuestra documentación para poder implementar **Maple Sim** y varias funcionalidades extras.
+
+    - Así como puede generar un código completo de swerve, también puedes únicamente generar las constantes, estas se suelen usar en las plantillas de terceros como las de Advantage Kit. Se llaman TunerConstants.
+
