@@ -12,6 +12,6 @@ Esto se refiere a algo que va más allá de un **TimedRobot** común, ya que est
 brinda grandes apoyos para una mayor organización del código, además de que facilita mucho la legibilidad y comprensión de cómo
 se maneja cada parte del robot.
 
-El artículo de la **WPILIB** sobre este tema es el siguiente: `Command Based Programming <https://docs.wpilib.org/en/latest/docs/software/commandbased/index.html>`_
+El artículo de la **WPILIB** sobre este tema es el siguiente: `Command Based Programming WPIBLIB <https://docs.wpilib.org/en/latest/docs/software/commandbased/index.html>`_
 De igual manera, tenemos documentación propia sobre este tema.
 
