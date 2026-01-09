@@ -6,7 +6,7 @@ Introducción a MapleSim
 un motor de físicas realistas a las simulaciones de FRC para poder sentir una interacción más
 realista entre el robot y su entorno.
 
-El link oficial de la documentación es el siguiente: `MapleSim Documentation <https://shenzhen-robotics-alliance.github.io/maple-sim/>`
+El link oficial de la documentación es el siguiente: `MapleSim Documentation <https://shenzhen-robotics-alliance.github.io/maple-sim/>`_
 
 .. important:: Esta documentación no es una traducción, simplemente vamos a plasmar nuestra experiencia utilizando esta librería y vamos a aclarar y explicar ciertos puntos que pueden resultar algo complicados para los nuevos programadores.
 
