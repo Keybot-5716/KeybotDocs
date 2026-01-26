@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Introducción a Advantage Kit &mdash; Keybot 5716 1.0 documentation</title>
+  <title>Codigo de ejepmlo para NEO V1.1 &mdash; Keybot 5716 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
 
@@ -18,9 +18,7 @@
       <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Introducción a MapleSim" href="../MapleSim/Introduccion.html" />
-    <link rel="prev" title="Introducción a la Odometría" href="../Wpilib/AdvancedProgramming/Odometry/Introduccion.html" /> 
+    <link rel="search" title="Search" href="../../../search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,21 +49,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../Acerca.html#nuestra-metas-y-objetivos">Nuestra metas y objetivos</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Areas de Keybot</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../Introduccion.html">Programación</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../Introduccion.html#introduccion">Introducción</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduccion.html#documentacion-de-la-wpilib">Documentación de la WPILIB</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="../Introduccion.html#documentacion-de-advantage-kit">Documentacion de Advantage Kit</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Introducción a Advantage Kit</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#caracteristicas-de-advantage-kit">Características de Advantage Kit</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduccion.html#documentacion-de-maple-sim">Documentación de Maple Sim</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Introduccion.html#tipos-de-mecanismos-para-programar">Tipos de mecanismos para programar</a></li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Introduccion.html">Programación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Mecanica/Introduccion.html">Mecánica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Electronica/Introduccion.html">Electrónica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Dise%C3%B1o/Introduccion.html">Diseño</a></li>
@@ -102,10 +87,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="../Introduccion.html">Area de Programación (Keybot 5716)</a></li>
-      <li class="breadcrumb-item active">Introducción a Advantage Kit</li>
+      <li class="breadcrumb-item active">Codigo de ejepmlo para NEO V1.1</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/Areas/Programacion/AdvantageKit/Introduccion.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/Areas/Programacion/Motores/SparkMAX.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -113,39 +97,28 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="introduccion-a-advantage-kit">
-<h1>Introducción a Advantage Kit<a class="headerlink" href="#introduccion-a-advantage-kit" title="Link to this heading"></a></h1>
-<p><strong>Advantage Kit</strong> es una librería de software de código abierto desarrollada por Mechanical Advantage,
-diseñada para complementar a la WPILIB en el aspecto de logging y telemetría, facilitando la depuración
-y el monitoreo del rendimiento del robot durante pruebas o partidas reales (incluso facilitando en simulaciones).</p>
-<ul class="simple">
-<li><p>El link de la documentación oficial es el siguiente: <a class="reference external" href="https://docs.advantagekit.org/">Advantage Kit Documentation</a></p></li>
-<li><p>El repositorio en GitHub es el siguiente: <a class="reference external" href="https://github.com/Mechanical-Advantage/AdvantageKit">Advantage Kit GitHub</a></p></li>
-<li><p>La api en java es el siguiente: <a class="reference external" href="https://docs.advantagekit.org/javadoc/">Advantage Kit Java API</a></p></li>
-</ul>
-<p>Cabe aclarar que esta librería es opcional, pero es altamente recomendada para tener un mejor control
-sobre todo el tema de logging.
-Ahora si, a pesar de que toda la documentación oficial está en inglés, al igual que la información
-de la WPILIB, esta no suele ser amigable en cuanto a nuevos programadores, por lo que vamos a dar énfasis
-a varios puntos importantes y dar ejemplos prácticos para que puedan entender mejor el uso de esta librería
-en un código de FRC real.</p>
-<div class="admonition important">
-<p class="admonition-title">Important</p>
-<p>No vamos a traducir la librería, simplemente vamos a explicar lo que nosotros usamos de ella, pero siempre vamos a dar la referencia de ciertos temas para que puedan consultarlo desde la documentación oficial</p>
+  <section id="codigo-de-ejepmlo-para-neo-v1-1">
+<h1>Codigo de ejepmlo para NEO V1.1<a class="headerlink" href="#codigo-de-ejepmlo-para-neo-v1-1" title="Link to this heading"></a></h1>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkBase.PersistMode</span><span class="p">;</span><span class="w"> </span><span class="c1">// Para guardar configuración en el flash</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkBase.ResetMode</span><span class="p">;</span><span class="w">   </span><span class="c1">// Resetea configuraciones previas</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkLowLevel.MotorType</span><span class="p">;</span><span class="w"> </span><span class="c1">// Si el motor es brushed o brushless</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.SparkMax</span><span class="p">;</span><span class="w">              </span><span class="c1">// Representa el controlador físico Spark MAX</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.config.SparkBaseConfig.IdleMode</span><span class="p">;</span><span class="w"> </span><span class="c1">// Se define Brake o Coast</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.config.SparkMaxConfig</span><span class="p">;</span><span class="w"> </span><span class="c1">// Objeto para configurar los parámetros</span>
+</pre></div>
 </div>
-<section id="caracteristicas-de-advantage-kit">
-<h2>Características de Advantage Kit<a class="headerlink" href="#caracteristicas-de-advantage-kit" title="Link to this heading"></a></h2>
-<p>Algunas de las funciones que implementa <strong>Advantage Kit</strong> son:</p>
-</section>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Clase para los rollers que implementa la interfaz RollerIO</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RollerIOSparkMax</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RollerIO</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Aquí iría la implementación de los métodos definidos en RollerIO</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../Wpilib/AdvancedProgramming/Odometry/Introduccion.html" class="btn btn-neutral float-left" title="Introducción a la Odometría" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../MapleSim/Introduccion.html" class="btn btn-neutral float-right" title="Introducción a MapleSim" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

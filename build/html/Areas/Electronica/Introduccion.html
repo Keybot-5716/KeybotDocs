@@ -54,7 +54,18 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../Programacion/Introduccion.html">Programación</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Mecanica/Introduccion.html">Mecánica</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Electrónica</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Electrónica</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#motor-neo-v1-1">Motor Neo v1.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#spark-max">Spark MAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modos-de-operacion-principales">Modos de operación principales</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuracion-inicial-recomendada">Configuración inicial recomendada:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#motor-kraken-x60">Motor Kraken X60</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#codigo">Código</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#imports-para-kraken-x60-talon-fx">Imports para Kraken X60 (Talon FX)</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../Dise%C3%B1o/Introduccion.html">Diseño</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Software</span></p>
@@ -103,6 +114,64 @@
 <h1>Area de Electrónica (Keybot 5716)<a class="headerlink" href="#area-de-electronica-keybot-5716" title="Link to this heading"></a></h1>
 <p>La electrónica es una área fundamental dentro del robot,
 ya que sin electricidad el robot simplemente no funciona.</p>
+<section id="motor-neo-v1-1">
+<h2>Motor Neo v1.1<a class="headerlink" href="#motor-neo-v1-1" title="Link to this heading"></a></h2>
+<p>Es un motor que podemos utilizar en distintos subsistemas cómo (rollers, intake, conveyors, etc).  Este motor funciona con el controlador SPARK MARX.
+Su voltaje de funcionamiento es de 12V
+Costo: 50 dls
+Peso: 0.424 kg
+Potencia máxima: 406W</p>
+</section>
+<section id="spark-max">
+<h2>Spark MAX<a class="headerlink" href="#spark-max" title="Link to this heading"></a></h2>
+<p>Es un controlador de motor avanzado en el que se puede modificar la velocidad, posición, corriente, PID interno, hasta rampas de aceleración. Es compatible con controladores motores DC (con y sin escobillas).
+Tiene un voltaje de funcionamiento de 12V y sus conexiones son mediante USB, CAN y PWM.
+El precio aproximado de este controlador ronda entre los $100 USD, basado en REV ROBOTICS.</p>
+</section>
+<section id="modos-de-operacion-principales">
+<h2>Modos de operación principales<a class="headerlink" href="#modos-de-operacion-principales" title="Link to this heading"></a></h2>
+<p>Duty Cycle (Percent Output): Permite el control directo de la potencia (ej. set(0.5) = 50%).
+Velocity Control: Mantiene la velocidad objetivo usando el encoder interno.
+Position Control: Mueve el motor a una posición específica.
+Smart Motion: Control avanzado con límites de aceleración y velocidad.</p>
+</section>
+<section id="configuracion-inicial-recomendada">
+<h2>Configuración inicial recomendada:<a class="headerlink" href="#configuracion-inicial-recomendada" title="Link to this heading"></a></h2>
+<p>Restaurar los valores de fábrica: Evita las configuraciones previas mediante la siguiente función restoreFactoryDefaults().
+Idle Mode: setIdleMode(IdleMode.kBrake) o IdleMode.kCoast según se requiera que el motor se frene o quede libre.
+Inversión de giro: setInverted(true/false) según el montaje físico
+Limitar corriente: setSmartCurrentLimit(40) para proteger el motor y el controlador.
+Encoder: Acceso con getEncoder() para leer posición y velocidad.</p>
+</section>
+<section id="motor-kraken-x60">
+<h2>Motor Kraken X60<a class="headerlink" href="#motor-kraken-x60" title="Link to this heading"></a></h2>
+<p>Motor eléctrico de alto rendimiento sin escobillas (brushless).
+Ejerce una potencia máxima de 1,108 W, causando una eficiencia máxima del 87% y un par de pérdida de 7,09 Nm. Además de que integra el controlador avanzado de Talon FX de CTR para tener un control de movimiento preciso y a diferencia de los Spark MAX este motor te da más feedback a la hora de usarlos y querer ver su estado.</p>
+<p>El precio aproximado es de 400 USD, aunque para los equipos e instituciones de la competición de robótica FIRST califican para un precio de 218 USD.</p>
+</section>
+<section id="codigo">
+<h2>Código<a class="headerlink" href="#codigo" title="Link to this heading"></a></h2>
+<section id="imports-para-kraken-x60-talon-fx">
+<h3>Imports para Kraken X60 (Talon FX)<a class="headerlink" href="#imports-para-kraken-x60-talon-fx" title="Link to this heading"></a></h3>
+<p>En el primer conjunto de código ponemos las importaciones que van a servir para poder mover el motor de cierta manera.
+En el segundo conjunto nos servira para poner cierta configuración al motor, como por ejemplo invertir el sentido al que está girando, entre otras.
+En el último conjunto va a servir para poner las correspondientes configuraciones para el manejo del voltaje.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// TalonFX (Kraken X60) y control básico por duty cycle/voltaje</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ctre.phoenix6.hardware.TalonFX</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ctre.phoenix6.controls.DutyCycleOut</span><span class="p">;</span><span class="w">   </span><span class="c1">// salida tipo % (abierto)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ctre.phoenix6.controls.VoltageOut</span><span class="p">;</span><span class="w">     </span><span class="c1">// salida en volts (abierto)</span>
+
+<span class="c1">// Configuraciones (neutral mode, invert, límites, etc.)</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ctre.phoenix6.configs.TalonFXConfiguration</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ctre.phoenix6.signals.NeutralModeValue</span><span class="p">;</span><span class="w"> </span><span class="c1">// Brake / Coast</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ctre.phoenix6.signals.InvertedValue</span><span class="p">;</span>
+
+<span class="c1">// Límites de corriente</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.ctre.phoenix6.configs.CurrentLimitsConfigs</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+</section>
 </section>
 
 
