@@ -107,10 +107,28 @@
 <span class="kn">import</span><span class="w"> </span><span class="nn">com.revrobotics.spark.config.SparkMaxConfig</span><span class="p">;</span><span class="w"> </span><span class="c1">// Objeto para configurar los parámetros</span>
 </pre></div>
 </div>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="c1">// Clase para los rollers que implementa la interfaz RollerIO</span>
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RollerIOSparkMax</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RollerIO</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// Aquí iría la implementación de los métodos definidos en RollerIO</span>
-<span class="p">}</span>
+<p>Ahora creamos una clase (en este caso para los rollers), en la cual implementamos la interfaz de RollerIO.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RollerIOSparkMax</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">RollerIO</span><span class="w"> </span><span class="p">{</span>
+</pre></div>
+</div>
+<p>Ahora creamos una variable controlada por CAN (Controller Area Network) y creamos un objeto de configuración para poder definir límites de corriente, modo break o coast, inversión del motor, etc.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="n">SparkMax</span><span class="w"> </span><span class="n">motor</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">SparkMaxConfig</span><span class="w"> </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SparkMaxConfig</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Creamos un constructor para iniciar con la configuración del Spark MAX.
+Declaramos que el motor será un objeto de Spark MAX y declaramos el ID CAN tomado de las constantes para Rollers así como el tipo de motor.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">motor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SparkMax</span><span class="p">(</span><span class="n">RollerConstants</span><span class="p">.</span><span class="na">ROLLER_MOTOR_ID</span><span class="p">,</span><span class="w"> </span><span class="n">MotorType</span><span class="p">.</span><span class="na">kBrushless</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>IMPORTANTE: el tipo de motor debe ser brushless porque el NEO V1.1 lo es, si se pone Brushed el motor NO funcionará.</p>
+<p>Configuración del Spark MAX</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="p">.</span><span class="na">smartCurrentLimit</span><span class="p">(</span><span class="mi">40</span><span class="p">).</span><span class="na">idleMode</span><span class="p">(</span><span class="n">IdleMode</span><span class="p">.</span><span class="na">kBrake</span><span class="p">);</span>
+
+<span class="c1">// smartCurrentLimit(40) limita el motor a 40 amperes</span>
+<span class="c1">// (protege el motor, el controlador y el breaker del PDP/PDH)</span>
+<span class="c1">// con idleMode(IdleMode.kBrake) indicamos que el motor va a frenar</span>
+<span class="c1">// cuando no reciba señal, de manera &quot;inmediata&quot;</span>
 </pre></div>
 </div>
 </section>

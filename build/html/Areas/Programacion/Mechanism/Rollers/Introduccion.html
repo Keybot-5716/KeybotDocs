@@ -140,8 +140,29 @@ esto permite que las piezas de juego se agarren perfectamente y se puedan transp
 </div>
 <section id="interfaz-basica-de-un-roller">
 <h3>Interfaz básica de un roller<a class="headerlink" href="#interfaz-basica-de-un-roller" title="Link to this heading"></a></h3>
-<p>En la interfaz primeramente hay un constructor que está siendo cargado con &#64;AutoLog
-.. code-block:: java</p>
+<p>En la interfaz primeramente hay un constructor que está siendo cargado con &#64;AutoLog</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot.subsystems.rollers</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.littletonrobotics.junction.AutoLog</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">RollerIO</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="nd">@AutoLog</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RollerIOInputs</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">motorConnected</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">acceleration</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">appliedVolts</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">tempCelcius</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">updateInputs</span><span class="p">(</span><span class="n">RollerIOInputs</span><span class="w"> </span><span class="n">inputs</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setVoltage</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">voltage</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">stopRoller</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>

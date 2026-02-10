@@ -4,5 +4,5 @@ py -m sphinx.cmd.build -b html source build/html
 - Instalar Librerias Necesarias
 py -m pip install -r requirements.txt
 
-- Abrir pagina
+- Abrir pagina 
 start .\build\html\index.html
