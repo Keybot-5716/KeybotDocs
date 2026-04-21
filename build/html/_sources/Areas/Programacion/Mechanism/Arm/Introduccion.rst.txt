@@ -1,3 +1,29 @@
 ##############
 Brazos en FRC
 ##############
+
+¿Qué es el Brazo?
+######################
+Brazeate
+
+
+¿Cómo funcionan el Brazo?
+################################
+
+
+
+Código
+#######
+
+.. important:: La siguiente explicación del código es usando la plantilla de Advantage Kit.
+
+
+
+Interfaz del Brazo
+------------------
+
+
+
+
+Subsistema del Brazo
+--------------------

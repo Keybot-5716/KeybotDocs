@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rodillos en FRC &mdash; Keybot 5716 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
 
   
       <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../../_static/documentation_options.js?v=f2a433a1"></script>
-      <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
-      <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -67,6 +67,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#que-son-los-rollers">¿Qué son los rollers?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#como-funcionan-los-rollers">¿Cómo funcionan los rollers?</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#codigo">Código</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#susbsistema-de-un-roller">Susbsistema de un Roller</a></li>
 </ul>
 </li>
 </ul>
@@ -124,12 +125,12 @@
 <h1>Rodillos en FRC<a class="headerlink" href="#rodillos-en-frc" title="Link to this heading"></a></h1>
 <section id="que-son-los-rollers">
 <h2>¿Qué son los rollers?<a class="headerlink" href="#que-son-los-rollers" title="Link to this heading"></a></h2>
-<p>Los rollers son mecanismos utilizados en los robots de FRC para manipular y transportar piezas de juego (game pieces) dentro del campo de juego.
+<p>Los rollers son mecanismos utilizados en los robots de FRC para manipular y transportar piezas de juego (<em>game pieces</em>) dentro del campo de juego.
 Estos mecanismos suelen consistir en una serie de rodillos motorizados que giran para agarrar, mover o lanzar las piezas de juego.</p>
 </section>
 <section id="como-funcionan-los-rollers">
 <h2>¿Cómo funcionan los rollers?<a class="headerlink" href="#como-funcionan-los-rollers" title="Link to this heading"></a></h2>
-<p>Estos funcionan mediante uno dos motores que hacen girar a los rodillos muy rápido,
+<p>Funcionan mediante uno o dos motores que hacen girar a los rodillos muy rápido,
 esto permite que las piezas de juego se agarren perfectamente y se puedan transportar o lanzar con precisión.</p>
 </section>
 <section id="codigo">
@@ -140,7 +141,7 @@ esto permite que las piezas de juego se agarren perfectamente y se puedan transp
 </div>
 <section id="interfaz-basica-de-un-roller">
 <h3>Interfaz básica de un roller<a class="headerlink" href="#interfaz-basica-de-un-roller" title="Link to this heading"></a></h3>
-<p>En la interfaz primeramente hay un constructor que está siendo cargado con &#64;AutoLog</p>
+<p>En la interfaz primeramente hay un constructor que está siendo cargado con <code class="docutils literal notranslate"><span class="pre">&#64;AutoLog</span></code>.</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot.subsystems.rollers</span><span class="p">;</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">org.littletonrobotics.junction.AutoLog</span><span class="p">;</span>
@@ -148,7 +149,7 @@ esto permite que las piezas de juego se agarren perfectamente y se puedan transp
 <span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">RollerIO</span><span class="w"> </span><span class="p">{</span>
 
 <span class="w">  </span><span class="nd">@AutoLog</span>
-<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RollerIOInputs</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RollerIOInputs</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">motorConnected</span><span class="p">;</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">acceleration</span><span class="p">;</span>
 <span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">appliedVolts</span><span class="p">;</span>
@@ -163,6 +164,108 @@ esto permite que las piezas de juego se agarren perfectamente y se puedan transp
 <span class="p">}</span>
 </pre></div>
 </div>
+</section>
+</section>
+<section id="susbsistema-de-un-roller">
+<h2>Susbsistema de un Roller<a class="headerlink" href="#susbsistema-de-un-roller" title="Link to this heading"></a></h2>
+<section id="que-es-un-subsistema">
+<h3>¿Qué es un subsistema?<a class="headerlink" href="#que-es-un-subsistema" title="Link to this heading"></a></h3>
+<p>Los subsistemas representan las partes físicas del robot (motores, sensores y mecanismos), además de permitirnos
+organizar la lógica de su control.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot.subsystems.rollers</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.SubsystemBase</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.littletonrobotics.junction.Logger</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">RollerSubsystem</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">SubsystemBase</span><span class="w"> </span><span class="p">{</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Este subsistema se encarga de controlar los rollers del robot.
+Centraliza el movimiento del motor y evita que otros
+archivos manipulen directamente el hardware.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">RollerIO</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">RollerIOInputsAutoLogged</span><span class="w"> </span><span class="n">inputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RollerIOInputsAutoLogged</span><span class="p">();</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">DesiredState</span><span class="w"> </span><span class="n">desiredState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DesiredState</span><span class="p">.</span><span class="na">STOPPED</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">RollersState</span><span class="w"> </span><span class="n">rollersState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">RollersState</span><span class="p">.</span><span class="na">STOPPING</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">desiredVoltage</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Aquí definimos las variables internas del subsistema roller que registran la comunicación con la interfaz (<code class="docutils literal notranslate"><span class="pre">io</span></code>).
+Además, se registran las entradas (<code class="docutils literal notranslate"><span class="pre">inputs</span></code>), los estados del robot o los deseados (<code class="docutils literal notranslate"><span class="pre">desiredState</span></code> y <code class="docutils literal notranslate"><span class="pre">rollersState</span></code>),
+y por último el voltaje para controlar su movimiento.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">DesiredState</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">STOPPED</span><span class="p">,</span>
+<span class="w">    </span><span class="n">FORWARD</span><span class="p">,</span>
+<span class="w">    </span><span class="n">REVERSE</span>
+<span class="p">}</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">RollersState</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">STOPPING</span><span class="p">,</span>
+<span class="w">    </span><span class="n">FORWARDING</span><span class="p">,</span>
+<span class="w">    </span><span class="n">REVERSING</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="nf">RollerSubsystem</span><span class="p">(</span><span class="n">RollerIO</span><span class="w"> </span><span class="n">io</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">io</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Establecemos las enumeraciones de estados, en el que <code class="docutils literal notranslate"><span class="pre">DesiredState</span></code> puede ser solicitado por otros comandos (detener, avanzar y retroceder).
+A su vez <code class="docutils literal notranslate"><span class="pre">RollersState</span></code> es el estado actual. Finalmente se incluye al constructor del subsistema recibiendo el objeto <code class="docutils literal notranslate"><span class="pre">RollerIO</span></code>
+y enlazando el código con el hardware físico.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">periodic</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Logger</span><span class="p">.</span><span class="na">processInputs</span><span class="p">(</span><span class="s">&quot;RollerInputs&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">inputs</span><span class="p">);</span>
+<span class="w">    </span><span class="n">io</span><span class="p">.</span><span class="na">updateInputs</span><span class="p">(</span><span class="n">inputs</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">rollersState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">setStateTransition</span><span class="p">();</span>
+<span class="w">    </span><span class="n">applyStates</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">io</span><span class="p">.</span><span class="na">stopRoller</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setVoltage</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">voltage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">io</span><span class="p">.</span><span class="na">setVoltage</span><span class="p">(</span><span class="n">voltage</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Las funciones de control y actualización del subsistema del roller:
+<code class="docutils literal notranslate"><span class="pre">periodic()</span></code> será ejecutado constantemente mientras el robot esté activo, actualizará las entradas de hardware, registrará y aplicará la información del estado correspondiente.
+<code class="docutils literal notranslate"><span class="pre">stop()</span></code> detiene el roller por completo.
+<code class="docutils literal notranslate"><span class="pre">setVoltage(double</span> <span class="pre">voltage)</span></code> aplica un voltaje al roller para controlar su movimiento.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="n">RollersState</span><span class="w"> </span><span class="nf">setStateTransition</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">desiredState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">STOPPED</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">RollersState</span><span class="p">.</span><span class="na">STOPPING</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">FORWARD</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">RollersState</span><span class="p">.</span><span class="na">FORWARDING</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">REVERSE</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">RollersState</span><span class="p">.</span><span class="na">REVERSING</span><span class="p">;</span>
+<span class="w">    </span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">applyStates</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">rollersState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">FORWARDING</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">setVoltage</span><span class="p">(</span><span class="n">desiredVoltage</span><span class="p">);</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">REVERSING</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">setVoltage</span><span class="p">(</span><span class="o">-</span><span class="n">desiredVoltage</span><span class="p">);</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">STOPPING</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">setVoltage</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDesiredState</span><span class="p">(</span><span class="n">DesiredState</span><span class="w"> </span><span class="n">desiredState</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">desiredState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">desiredState</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setDesiredStateWithVoltage</span><span class="p">(</span><span class="n">DesiredState</span><span class="w"> </span><span class="n">desiredState</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">desiredVoltage</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">desiredState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">desiredState</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">desiredVoltage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">desiredVoltage</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>En este fragmento:
+- <code class="docutils literal notranslate"><span class="pre">setStateTransition()</span></code> pasa de un estado deseado a uno actual.
+- <code class="docutils literal notranslate"><span class="pre">applyStates()</span></code> aplica el comportamiento del motor según el estado actual.
+- Los métodos <code class="docutils literal notranslate"><span class="pre">setDesiredState()</span></code> y <code class="docutils literal notranslate"><span class="pre">setDesiredStateWithVoltage()</span></code> permiten cambiar el estado del roller con o sin especificar el voltaje.</p>
 </section>
 </section>
 </section>
