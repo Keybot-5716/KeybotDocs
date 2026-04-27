@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brazos en FRC &mdash; Keybot 5716 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=9edc463e" />
 
   
       <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../../_static/documentation_options.js?v=f2a433a1"></script>
-      <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -140,6 +140,49 @@ En otras palabras, es un subsistema mecánico controlado electrónicamente,  en 
 </div>
 <section id="interfaz-del-brazo">
 <h3>Interfaz del Brazo<a class="headerlink" href="#interfaz-del-brazo" title="Link to this heading"></a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot.subsystems.arm</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.littletonrobotics.junction.AutoLog</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">ArmIO</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nd">@AutoLog</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ArmIOInputs</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">ArmIOData</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArmIOData</span><span class="p">(</span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">record</span> <span class="nc">ArmIOData</span><span class="p">(</span>
+<span class="w">      </span><span class="kt">boolean</span><span class="w"> </span><span class="n">motorConnected</span><span class="p">,</span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">positionRotations</span><span class="p">,</span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">velocityRotationsPerSec</span><span class="p">,</span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">appliedVolts</span><span class="p">,</span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">supplyCurrentAmps</span><span class="p">,</span>
+<span class="w">      </span><span class="kt">double</span><span class="w"> </span><span class="n">tempCelsius</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">updateInputs</span><span class="p">(</span><span class="n">ArmIOInputs</span><span class="w"> </span><span class="n">inputs</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">stop</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">runOpenLoop</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">output</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setVoltage</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">volts</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPosition</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">position</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setNeutralModeBreak</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">enable</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">resetEncoder</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setPID</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">kP</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">kI</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">kD</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="w">  </span><span class="cm">/** Se utiliza para protocolos SysID */</span>
+<span class="w">  </span><span class="k">default</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">optimizeForSysID</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Comenzamos con <code class="docutils literal notranslate"><span class="pre">ArmIOData</span></code>, el cual nos mostrara si el motor esta funcionando y los datos acerca de la posición, velocidad, voltaje, corriente y temperatura.
+Después tenemos los metodos básicos para controlar el brazo, en los cuales esta el método <code class="docutils literal notranslate"><span class="pre">updateInputs</span></code> para actualizar las entradas, el siguiente es <code class="docutils literal notranslate"><span class="pre">stop</span></code> para detener, <code class="docutils literal notranslate"><span class="pre">runOpenLoop</span></code> mover en modo abierto.
+Finalmente, aplicar voltaje <code class="docutils literal notranslate"><span class="pre">setVoltage</span></code>, fijar posición <code class="docutils literal notranslate"><span class="pre">etPosition</span></code>, reiniciar el encoder <code class="docutils literal notranslate"><span class="pre">resetEncoder</span></code> o ajustar parámetros PID <code class="docutils literal notranslate"><span class="pre">setPID</span></code>. Además, incluye optimizeForSysID, usado en protocolos de caracterización del motor.
+Toda esta interfaz es la conexión entre el código y el hardware.</p>
 </section>
 <section id="subsistema-del-brazo">
 <h3>Subsistema del Brazo<a class="headerlink" href="#subsistema-del-brazo" title="Link to this heading"></a></h3>

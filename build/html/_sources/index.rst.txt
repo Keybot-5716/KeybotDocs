@@ -54,9 +54,12 @@ Líder de programación 2024-2025 / Vicepresi 2025-2026 Ruben :O
 
 Líder de programación 2025-2026 Jorge :O
 
-
 **Equipo de programación**
 
 German :)
 
 Isju :O
+
+Alexis :v
+
+Aleksey :)

@@ -24,8 +24,13 @@ Estructura de Scouting
 
 Scouting Cuantitativo
 ~~~~~~~~~~~~~~~~~~~~~
-Registro de datos numéricos durante los matches (piezas anotadas, tiempos de ciclo, rutina en autónomo).
-Se enfoca en la precisión del registro en tiempo real mediante el uso de aplicaciones o hojas de cálculo.
+Se centra en la obtención de datos durante el periodo autónomo y teleoperado. 
+El objetivo es eliminar la subjetividad mediante el registro de:
+
+* **Ciclos:** Cantidad de piezas anotadas por periodo o nivel y tiempo promedio por ciclo.
+* **Efectividad:** Relación entre intentos de disparo/colocación y aciertos reales.
+* **Movilidad:** Cruce de línea de salida y éxito en tareas específicas de autónomo.
+* **Endgame:** Tiempo de escalada, nivel alcanzado y tasa de éxito en el último periodo del match.
 
 Scouting Cualitativo
 ~~~~~~~~~~~~~~~~~~~~~
