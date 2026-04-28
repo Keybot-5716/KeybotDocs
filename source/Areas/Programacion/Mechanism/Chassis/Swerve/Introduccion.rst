@@ -64,3 +64,7 @@ Documentación pre-software
   Prerequisitos de Software <PrerequisitesSoftware>
 
   Plantillas de Swerve <SwerveTemplates>
+
+  Tips <Tips>
+
+  SwerveKinematics <SwerveKinematics>

@@ -46,6 +46,12 @@ mejor futuro.
    Introducción a FTC <Other/FTC/Introduccion>
    Códigos de FTC <Other/FTC/CodigosFTC>
 
+.. toctree::
+   :caption: Scouting
+   :maxdepth: 1
+
+   Introducción a Scouting <Other/Scouting/Introduccion>
+
 Créditos de la documentación
 *****************************
 Fundador de la documentación: Líder de programación 2021 - 2023 UwU

@@ -46,10 +46,17 @@ Documentación de Maple Sim
 
   Introducción a Maple Sim <MapleSim/Introduccion>
 
+Documentación de Visión
+************************
+.. toctree::
+  :maxdepth: 1
+
+  Introducción a Vision <Vision/Vision>
+
 Tipos de mecanismos para programar
 ***********************************
 .. toctree::
-  :maxdepth: 2
+  :maxdepth: 1
 
   Chasis <Mechanism/Chassis/Introduccion>
 
@@ -62,3 +69,5 @@ Tipos de mecanismos para programar
   Torreta <Mechanism/Turret/Introduccion>
 
   Rodillo <Mechanism/Rollers/Introduccion>
+
+  Intake <Mechanism/Intake/Introduccion>

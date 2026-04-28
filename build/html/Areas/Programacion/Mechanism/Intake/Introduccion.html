@@ -1,0 +1,361 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intake en FRC &mdash; Keybot 5716 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Area de Mecánica (Keybot 5716)" href="../../../Mecanica/Introduccion.html" />
+    <link rel="prev" title="Rodillos en FRC" href="../Rollers/Introduccion.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Keybot 5716
+              <img src="../../../../_static/logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Acerca de</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Acerca.html">¿Qué es Keybot?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Acerca.html#nuestra-mision">Nuestra misión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Acerca.html#nuestra-vision">Nuestra visión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Acerca.html#nuestra-metas-y-objetivos">Nuestra metas y objetivos</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Areas de Keybot</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../Introduccion.html">Programación</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../Introduccion.html#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Introduccion.html#documentacion-de-la-wpilib">Documentación de la WPILIB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Introduccion.html#documentacion-de-advantage-kit">Documentacion de Advantage Kit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Introduccion.html#documentacion-de-maple-sim">Documentación de Maple Sim</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../Introduccion.html#tipos-de-mecanismos-para-programar">Tipos de mecanismos para programar</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../Chassis/Introduccion.html">Chasis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Elevator/Introduccion.html">Elevador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Arm/Introduccion.html">Brazo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Wrist/Introduccion.html">Muñeca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Turret/Introduccion.html">Torreta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Rollers/Introduccion.html">Rodillo</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Intake</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#que-es-el-intake">¿Qué es el intake?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#como-funcionan-el-intake">¿Cómo funcionan el intake?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#codigo">Código</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Mecanica/Introduccion.html">Mecánica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Electronica/Introduccion.html">Electrónica</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../Dise%C3%B1o/Introduccion.html">Diseño</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Other/Software/Introduccion.html">Introduccion al software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Other/Software/CrearProyecto.html">¿Cómo crear un proyecto?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Other/Software/DriverStation.html">Información de la DriverStation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Other/Software/Networktables.html">Información de las Networktables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Other/Software/RadioConfig.html">Actualizar la radio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Other/Software/GithubGuia.html">Guía de Github</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Other/Software/Limelight.html">Información de la limelight</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Other/Software/Rev.html">Información de REV</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Other/Software/TalonFX.html">Información de TalonFX</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Categoría FTC</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Other/FTC/Introduccion.html">Introducción a FTC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../Other/FTC/CodigosFTC.html">Códigos de FTC</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Keybot 5716</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../Introduccion.html">Area de Programación (Keybot 5716)</a></li>
+      <li class="breadcrumb-item active">Intake en FRC</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/Areas/Programacion/Mechanism/Intake/Introduccion.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="intake-en-frc">
+<h1>Intake en FRC<a class="headerlink" href="#intake-en-frc" title="Link to this heading"></a></h1>
+<section id="que-es-el-intake">
+<h2>¿Qué es el intake?<a class="headerlink" href="#que-es-el-intake" title="Link to this heading"></a></h2>
+<p>Es un mecanismo activo de recolección impulsado por un motor, diseñado para recoger elementos del juego y pensado para ser rápido confiable y tolerante a los errores de alineación.
+Su éxito en la competencia depende de su geometría, materiales y su velocidad.</p>
+</section>
+<section id="como-funcionan-el-intake">
+<h2>¿Cómo funcionan el intake?<a class="headerlink" href="#como-funcionan-el-intake" title="Link to this heading"></a></h2>
+<p>El intake funciona de manera continua succionando o atrayendo con diferentes medios, como rodillos, ruedas, correas o tubos.
+Se debe considerar diseñar un margen de error, la orientación de las piezas del juego y la alineación del robot para tener una buena resistencia en la competencia.
+Además de que no sea necesario, pero se recomienda dedicarle un motor al intake.</p>
+</section>
+<section id="codigo">
+<h2>Código<a class="headerlink" href="#codigo" title="Link to this heading"></a></h2>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>La siguiente explicación del código es usando la plantilla de Advantage Kit.</p>
+</div>
+<section id="intake-del-pivot">
+<h3>Intake del Pivot<a class="headerlink" href="#intake-del-pivot" title="Link to this heading"></a></h3>
+<p>Este subsistema controla el ángulo del intake mediante un motor (TalonFX en hardware real, simulación en <cite>IntakePivotIOSim</cite>).</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">IntakePivotIO</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nd">@AutoLog</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">IntakePivotIOInputs</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="n">motorConnected</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">appliedVolts</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">tempCelcius</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">positionIntake</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">updateInputs</span><span class="p">(</span><span class="n">IntakePivotIOInputs</span><span class="w"> </span><span class="n">inputs</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">setVoltage</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">voltage</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">stopMotor</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Definimos la interfaz del <strong>pivot del intake</strong>, que sirve como puente entre el código y el hardware físico.
+La clase interna <code class="docutils literal notranslate"><span class="pre">IntakePivotIOInputs</span></code> almacena las lecturas principales las cuales son: conexión del motor, voltaje aplicado, temperatura y posición.
+Con el método <code class="docutils literal notranslate"><span class="pre">updateInputs</span></code> actualizamos estas lecturas periódicamente.
+Con <code class="docutils literal notranslate"><span class="pre">setVoltage</span></code> aplicamos voltaje al motor, mientras que <code class="docutils literal notranslate"><span class="pre">stopMotor</span></code> lo detiene de forma segura.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">IntakePivotIOSim</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IntakePivotIO</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">IntakeSimulation</span><span class="w"> </span><span class="n">intakeSimulation</span><span class="p">;</span>
+
+<span class="w">  </span><span class="cm">/**</span>
+<span class="cm">   * Este método sirve para configurar la especificaciones del intake que se va a mostrar simulado</span>
+<span class="cm">   *</span>
+<span class="cm">   * @param driveTrain Sirve para tener en cuenta en qué base estara este intake</span>
+<span class="cm">   */</span>
+<span class="w">  </span><span class="kd">public</span><span class="w"> </span><span class="nf">IntakePivotIOSim</span><span class="p">(</span><span class="n">AbstractDriveTrainSimulation</span><span class="w"> </span><span class="n">driveTrain</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">intakeSimulation</span><span class="w"> </span><span class="o">=</span>
+<span class="w">        </span><span class="n">IntakeSimulation</span><span class="p">.</span><span class="na">OverTheBumperIntake</span><span class="p">(</span>
+<span class="w">            </span><span class="s">&quot;Fuel&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">driveTrain</span><span class="p">,</span>
+<span class="w">            </span><span class="n">Meters</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mf">0.508</span><span class="p">),</span><span class="w"> </span><span class="c1">// 20 inches</span>
+<span class="w">            </span><span class="n">Meters</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+<span class="w">            </span><span class="n">IntakeSimulation</span><span class="p">.</span><span class="na">IntakeSide</span><span class="p">.</span><span class="na">FRONT</span><span class="p">,</span>
+<span class="w">            </span><span class="mi">20</span><span class="p">);</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Esta clase implemente la interfaz del <code class="docutils literal notranslate"><span class="pre">IntakePivotIO</span></code> que permite probar el funcionamiento del intake sin necesidad del hardware en un entorno de simulación.
+La variable interna <code class="docutils literal notranslate"><span class="pre">intakeSimulation</span></code> representa el intake simulado y contiene toda la lógica por parte de la extensión, retracción y la detección de piezas de juego.
+En cuanto al método constructor <code class="docutils literal notranslate"><span class="pre">IntakePivotIOSim(AbstractDriveTrainSimulation</span> <span class="pre">driveTrain)</span></code>, tiene parámetros específicos como:
+- Tipo de objeto que recogerá: <code class="docutils literal notranslate"><span class="pre">Fuel</span></code>.
+- Base de conducción a la que está conectado: <code class="docutils literal notranslate"><span class="pre">driveTrain</span></code>.
+- Ancho del intake: <code class="docutils literal notranslate"><span class="pre">Meters.of(0.508)</span></code> ancho del intake (20 pulgadas).
+- Extensión fuera del chasis: <code class="docutils literal notranslate"><span class="pre">Meters.of(0.2)</span></code>.
+- Lado de montaje: <code class="docutils literal notranslate"><span class="pre">FRONT</span></code> (parte frontal del robot).
+- Capacidad máxima: <code class="docutils literal notranslate"><span class="pre">20</span></code> piezas.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * Con esto podemos hacer que extienda o que retraiga el intake</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param runIntake sirve si es que queremos que se extienda o se retraiga</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setRunning</span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">runIntake</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">runIntake</span><span class="p">)</span>
+<span class="w">    </span><span class="n">intakeSimulation</span><span class="p">.</span><span class="na">startIntake</span><span class="p">();</span>
+<span class="w">  </span><span class="k">else</span>
+<span class="w">    </span><span class="n">intakeSimulation</span><span class="p">.</span><span class="na">stopIntake</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * @return si hay algun fuel en el intake</span>
+<span class="cm"> */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">isFuelInsideIntake</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">intakeSimulation</span><span class="p">.</span><span class="na">getGamePiecesAmount</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/** */</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">launchFuel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">intakeSimulation</span><span class="p">.</span><span class="na">obtainGamePieceFromIntake</span><span class="p">())</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">  </span><span class="c1">// ShooterIOSim.launchFuel(); // futuro: notificar al shooter</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ahora tenemos algunos de los métodos como <code class="docutils literal notranslate"><span class="pre">setRunning(boolean</span> <span class="pre">runIntake)</span></code> en el que podemos controlar si el intake se enciende o se retrae.
+Cuando es true, detecta pieza del juego y se extiende.
+Cuando es false, se retrae dentro del chasis y deja de recolectar.</p>
+<p>El siguiente método es <code class="docutils literal notranslate"><span class="pre">isFuelInsideIntake</span></code> el cual devuelve un valor booleano para incidcar si hay alguna pieza de juego dentro del intake.
+Terminamos con el método <code class="docutils literal notranslate"><span class="pre">launchFuel</span></code> simulando el lanzamiento de una pieza de juego desde el intake.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">updateInputs</span><span class="p">(</span><span class="n">IntakePivotIOInputs</span><span class="w"> </span><span class="n">inputs</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setVoltage</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">voltage</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+
+<span class="nd">@Override</span>
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">stopMotor</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+</pre></div>
+</div>
+<p>Finalmente algunos de los métodos sobreescritos, con <code class="docutils literal notranslate"><span class="pre">updateInputs</span></code> actualizamos las lecturas del motor (voltaje,temperatura,posición), mientras que en simulación no se modifican valores.
+Con <code class="docutils literal notranslate"><span class="pre">setVoltage</span></code> es el voltaje que vamos a establecer y se aplica al motor para mover el pivot.
+El último metódo <code class="docutils literal notranslate"><span class="pre">stopMotor</span></code> detiene el motor de forma segura.</p>
+</section>
+<section id="subsistema-del-intake">
+<h3>Subsistema del intake<a class="headerlink" href="#subsistema-del-intake" title="Link to this heading"></a></h3>
+<p>El subsistema del Intake coordina el funcionamiento del pivot y los rollers del intake.
+Se construye en la clase <code class="docutils literal notranslate"><span class="pre">SubsystemBase</span></code> y es la conexión entre las interfaces de hardware/simulación y lógica del robot.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">frc.robot.subsystems.intake</span><span class="p">;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.math.controller.ProfiledPIDController</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.math.filter.Debouncer</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.math.filter.Debouncer.DebounceType</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.math.trajectory.TrapezoidProfile</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">edu.wpi.first.wpilibj2.command.SubsystemBase</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">frc.lib.team6328.LoggedTunableNumber</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">frc.robot.subsystems.intake.pivot.IntakePivotIO</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">frc.robot.subsystems.intake.pivot.IntakePivotIOInputsAutoLogged</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">frc.robot.subsystems.intake.rollers.IntakeRollersIO</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">frc.robot.subsystems.intake.rollers.IntakeRollersIOInputsAutoLogged</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">org.littletonrobotics.junction.Logger</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">IntakeSubsystem</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">SubsystemBase</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">IntakePivotIO</span><span class="w"> </span><span class="n">pivotIO</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">IntakeRollersIO</span><span class="w"> </span><span class="n">rollersIO</span><span class="p">;</span>
+
+<span class="w">  </span><span class="c1">// private final IntakeIOInputsAutoLogged inputs = new IntakeIOInputsAutoLogged();</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">IntakePivotIOInputsAutoLogged</span><span class="w"> </span><span class="n">pivotInputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">IntakePivotIOInputsAutoLogged</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">IntakeRollersIOInputsAutoLogged</span><span class="w"> </span><span class="n">rollersInputs</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="k">new</span><span class="w"> </span><span class="n">IntakeRollersIOInputsAutoLogged</span><span class="p">();</span>
+
+<span class="w">  </span><span class="c1">// Creamos un objeto TrapezoidProfile que tenga velocidad y aceleración máximas</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">TrapezoidProfile</span><span class="p">.</span><span class="na">Constraints</span><span class="w"> </span><span class="n">profile</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TrapezoidProfile</span><span class="p">.</span><span class="na">Constraints</span><span class="p">(</span><span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="n">ProfiledPIDController</span><span class="w"> </span><span class="n">controller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ProfiledPIDController</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.08</span><span class="p">,</span><span class="w"> </span><span class="n">profile</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">TrapezoidProfile</span><span class="p">.</span><span class="na">State</span><span class="w"> </span><span class="n">goal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TrapezoidProfile</span><span class="p">.</span><span class="na">State</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">LoggedTunableNumber</span><span class="w"> </span><span class="n">rollerVolts</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="k">new</span><span class="w"> </span><span class="n">LoggedTunableNumber</span><span class="p">(</span><span class="s">&quot;Intake/Rollers/RollerVoltsIntake&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">5.0</span><span class="p">);</span>
+
+<span class="w">  </span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">LoggedTunableNumber</span><span class="w"> </span><span class="n">pivotVolts</span><span class="w"> </span><span class="o">=</span>
+<span class="w">      </span><span class="k">new</span><span class="w"> </span><span class="n">LoggedTunableNumber</span><span class="p">(</span><span class="s">&quot;Intake/Pivot/PivotVolts&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2.0</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>En este bloque de código comenzamos por la conexión de las interfaces <cite>IntakePivotIO</cite> y los rollers <cite>IntakeRollersIO</cite>, se crean objetos para registrar sus lecturas con <code class="docutils literal notranslate"><span class="pre">pivotInputs</span></code>, <code class="docutils literal notranslate"><span class="pre">rollersInputs</span></code>.
+Se configura un controlador PID con perfil trapezoidal para mover el pivot suavemente. Además de definir los voltajes ajustables <code class="docutils literal notranslate"><span class="pre">rollerVolts</span></code> y <code class="docutils literal notranslate"><span class="pre">pivotVolts</span></code> los cuales nos permiten controlar la
+potencia en tiempo real.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Debouncer</span><span class="w"> </span><span class="n">pivotDebouncer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Debouncer</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">DebounceType</span><span class="p">.</span><span class="na">kFalling</span><span class="p">);</span>
+<span class="c1">// private final Alert pivotDisconnected = new Alert(&quot;Pivot disconnected :(&quot;,</span>
+<span class="c1">// Alert.AlertType.kWarning);</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="n">DesiredState</span><span class="w"> </span><span class="n">desiredState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DesiredState</span><span class="p">.</span><span class="na">STOPPED</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="n">IntakeState</span><span class="w"> </span><span class="n">intakeState</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IntakeState</span><span class="p">.</span><span class="na">STOPPING</span><span class="p">;</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">desiredRollersVoltage</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">desiredPivotVoltageForOpenLoop</span><span class="p">;</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">DesiredState</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">STOPPED</span><span class="p">,</span>
+<span class="w">  </span><span class="n">FORWARD_ROLLERS</span><span class="p">,</span>
+<span class="w">  </span><span class="n">REVERSE_ROLLERS</span><span class="p">,</span>
+<span class="w">  </span><span class="n">FORWARD_PIVOT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">REVERSE_PIVOT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">STOPPPED_PIVOT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">IN</span><span class="p">,</span>
+<span class="w">  </span><span class="n">OUT</span>
+<span class="p">}</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kd">enum</span><span class="w"> </span><span class="n">IntakeState</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">STOPPING</span><span class="p">,</span>
+<span class="w">  </span><span class="n">FORWARDING_ROLLERS</span><span class="p">,</span>
+<span class="w">  </span><span class="n">REVERSING_ROLLERS</span><span class="p">,</span>
+<span class="w">  </span><span class="n">FORWARDING_PIVOT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">REVERSING_PIVOT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">STOPPING_PIVOT</span><span class="p">,</span>
+<span class="w">  </span><span class="n">INING</span><span class="p">,</span>
+<span class="w">  </span><span class="n">OUTING</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="nf">IntakeSubsystem</span><span class="p">(</span><span class="n">IntakeRollersIO</span><span class="w"> </span><span class="n">rollersIO</span><span class="p">,</span><span class="w"> </span><span class="n">IntakePivotIO</span><span class="w"> </span><span class="n">pivotIO</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="na">rollersIO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rollersIO</span><span class="p">;</span>
+<span class="w">  </span><span class="k">this</span><span class="p">.</span><span class="na">pivotIO</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pivotIO</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Aqui definimos la lógica de estados del intake.
+Ocupamos un Debouncer para filtrar las señales del pivot, y se inicializan dos enums <code class="docutils literal notranslate"><span class="pre">DesiredState</span></code> (lo que queremos que haga el intake) y <code class="docutils literal notranslate"><span class="pre">IntakeState</span></code> (Acción que se ejecuta).
+También se guardan voltajes deseados para rollers y pivot en modo abierto. Por último, el constructor conecta el subsistema con las interfaces de hardware <code class="docutils literal notranslate"><span class="pre">rollersIO</span></code> y <code class="docutils literal notranslate"><span class="pre">pivotIO</span></code>.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../Rollers/Introduccion.html" class="btn btn-neutral float-left" title="Rodillos en FRC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../../Mecanica/Introduccion.html" class="btn btn-neutral float-right" title="Area de Mecánica (Keybot 5716)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Keybot 5716.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
