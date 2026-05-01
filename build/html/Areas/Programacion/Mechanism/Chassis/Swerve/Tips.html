@@ -8,17 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tips para la Swerve &mdash; Keybot 5716 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../../_static/css/theme.css?v=9edc463e" />
 
   
       <script src="../../../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../../../_static/documentation_options.js?v=f2a433a1"></script>
-      <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
-      <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../../../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
-    <link rel="search" title="Search" href="../../../../../search.html" /> 
+    <link rel="search" title="Search" href="../../../../../search.html" />
+    <link rel="next" title="Swerve Kinematics" href="SwerveKinematics.html" />
+    <link rel="prev" title="Plantillas comunes de Swerve" href="SwerveTemplates.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,8 +51,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../Acerca.html#nuestra-metas-y-objetivos">Nuestra metas y objetivos</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Areas de Keybot</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../Introduccion.html">Programación</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../Introduccion.html">Programación</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../Introduccion.html#introduccion">Introducción</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Introduccion.html#documentacion-de-la-wpilib">Documentación de la WPILIB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Introduccion.html#documentacion-de-advantage-kit">Documentacion de Advantage Kit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Introduccion.html#documentacion-de-maple-sim">Documentación de Maple Sim</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../Introduccion.html#documentacion-de-vision">Documentación de Visión</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../../Introduccion.html#tipos-de-mecanismos-para-programar">Tipos de mecanismos para programar</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../Introduccion.html">Chasis</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="Introduccion.html">  Chasis Swerve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Mecanum/Introduccion.html">  Chasis Mecanum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../TankDrive/Introduccion.html">  Chasis Tank</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../Elevator/Introduccion.html">Elevador</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Arm/Introduccion.html">Brazo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Wrist/Introduccion.html">Muñeca</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Turret/Introduccion.html">Torreta</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../Rollers/Introduccion.html">Rodillo</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../Mecanica/Introduccion.html">Mecánica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../Electronica/Introduccion.html">Electrónica</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../Dise%C3%B1o/Introduccion.html">Diseño</a></li>
@@ -72,6 +95,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../../../Other/FTC/Introduccion.html">Introducción a FTC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../Other/FTC/CodigosFTC.html">Códigos de FTC</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Scouting</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../Other/Scouting/Introduccion.html">Introducción a Scouting</a></li>
+</ul>
 
         </div>
       </div>
@@ -87,6 +114,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../Introduccion.html">Area de Programación (Keybot 5716)</a></li>
+          <li class="breadcrumb-item"><a href="../Introduccion.html">Chasis en FRC</a></li>
+          <li class="breadcrumb-item"><a href="Introduccion.html">Introducción al Swerve</a></li>
       <li class="breadcrumb-item active">Tips para la Swerve</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../../../_sources/Areas/Programacion/Mechanism/Chassis/Swerve/Tips.rst.txt" rel="nofollow"> View page source</a>
@@ -112,7 +142,10 @@
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SwerveTemplates.html" class="btn btn-neutral float-left" title="Plantillas comunes de Swerve" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SwerveKinematics.html" class="btn btn-neutral float-right" title="Swerve Kinematics" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

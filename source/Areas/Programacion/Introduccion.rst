@@ -52,6 +52,7 @@ Documentación de Visión
   :maxdepth: 1
 
   Introducción a Vision <Vision/Vision>
+  Instalación <Vision/Instalacion>
 
 Tipos de mecanismos para programar
 ***********************************

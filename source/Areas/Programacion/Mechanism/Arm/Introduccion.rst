@@ -67,8 +67,28 @@ Interfaz del Brazo
 
 Comenzamos con ``ArmIOData``, el cual nos mostrara si el motor esta funcionando y los datos acerca de la posición, velocidad, voltaje, corriente y temperatura.
 Después tenemos los metodos básicos para controlar el brazo, en los cuales esta el método ``updateInputs`` para actualizar las entradas, el siguiente es ``stop`` para detener, ``runOpenLoop`` mover en modo abierto.
-Finalmente, aplicar voltaje ``setVoltage``, fijar posición ``etPosition``, reiniciar el encoder ``resetEncoder`` o ajustar parámetros PID ``setPID``. Además, incluye optimizeForSysID, usado en protocolos de caracterización del motor. 
+Finalmente, aplicar voltaje ``setVoltage``, fijar posición ``setPosition``, reiniciar el encoder ``resetEncoder`` o ajustar parámetros PID ``setPID``. Además, incluye optimizeForSysID, usado en protocolos de caracterización del motor. 
 Toda esta interfaz es la conexión entre el código y el hardware.
 
 Subsistema del Brazo
 --------------------
+
+ .. code-block:: java
+
+    private final ArmIO io;
+    private final ArmIOInputsAutoLogged inputs = new ArmIOInputsAutoLogged();
+
+    private final Debouncer motorConnectedDebouncer = new Debouncer(0.5, DebounceType.kFalling);
+    private final Alert motorDisconnected =
+        new Alert("Arm Motor Disconnected! D:", AlertType.kWarning);
+
+    private double lastDesiredAngle = 0;
+    private double desiredElevatorPosition;
+    private double desiredOutput;
+
+  
+Este bloque de codigo define el subsistema del brazo.
+Primero, ``ArmSubsystem`` que conecta la interfaz con el robot ``ArmÌO`` y registra las entradas en ``inputs``.
+Seguimos con el uso de un ``Debouncer`` y una alerta para detectar si el motor esta desconectado, además de variables como el último ángulo y la posición deseada.
+Ahora los estados: ``DesiredStated`` (lo que queremos que haga el brazo) y ``SubsystemState`` (la acción que realmente ejecuta).
+Después, tenemos el método ``periodic`` que actualizará lecturas y registramos en el ``logger`` y aplicaremos las transiciones con ``set

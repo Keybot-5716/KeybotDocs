@@ -19,6 +19,17 @@ Introducción
 
  //////////////////////////////////////////////////
 
+ Contactos
+ -----------
+
+ Cyberpunk 8020
+
+ MIT app inventor
+
+ dedalus
+
+
+
 Estructura de Scouting
 ----------------------
 
