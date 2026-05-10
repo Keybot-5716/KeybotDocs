@@ -62,7 +62,7 @@ Líder de programación 2025-2026 Jorge :O
 
 **Equipo de programación**
 
-German :)
+Germán :)
 
 Isju :O
 

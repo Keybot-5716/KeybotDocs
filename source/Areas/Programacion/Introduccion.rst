@@ -53,6 +53,8 @@ Documentación de Visión
 
   Introducción a Vision <Vision/Vision>
   Instalación <Vision/Instalacion>
+  Calibración y Configuración de Pipelines<Vision/Calibracion>
+
 
 Tipos de mecanismos para programar
 ***********************************

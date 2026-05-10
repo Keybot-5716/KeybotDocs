@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brazos en FRC &mdash; Keybot 5716 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
 
   
       <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../../_static/documentation_options.js?v=f2a433a1"></script>
-      <script src="../../../../_static/doctools.js?v=fd6eb6e6"></script>
-      <script src="../../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -186,11 +186,30 @@ En otras palabras, es un subsistema mecánico controlado electrónicamente,  en 
 </div>
 <p>Comenzamos con <code class="docutils literal notranslate"><span class="pre">ArmIOData</span></code>, el cual nos mostrara si el motor esta funcionando y los datos acerca de la posición, velocidad, voltaje, corriente y temperatura.
 Después tenemos los metodos básicos para controlar el brazo, en los cuales esta el método <code class="docutils literal notranslate"><span class="pre">updateInputs</span></code> para actualizar las entradas, el siguiente es <code class="docutils literal notranslate"><span class="pre">stop</span></code> para detener, <code class="docutils literal notranslate"><span class="pre">runOpenLoop</span></code> mover en modo abierto.
-Finalmente, aplicar voltaje <code class="docutils literal notranslate"><span class="pre">setVoltage</span></code>, fijar posición <code class="docutils literal notranslate"><span class="pre">etPosition</span></code>, reiniciar el encoder <code class="docutils literal notranslate"><span class="pre">resetEncoder</span></code> o ajustar parámetros PID <code class="docutils literal notranslate"><span class="pre">setPID</span></code>. Además, incluye optimizeForSysID, usado en protocolos de caracterización del motor.
+Finalmente, aplicar voltaje <code class="docutils literal notranslate"><span class="pre">setVoltage</span></code>, fijar posición <code class="docutils literal notranslate"><span class="pre">setPosition</span></code>, reiniciar el encoder <code class="docutils literal notranslate"><span class="pre">resetEncoder</span></code> o ajustar parámetros PID <code class="docutils literal notranslate"><span class="pre">setPID</span></code>. Además, incluye optimizeForSysID, usado en protocolos de caracterización del motor.
 Toda esta interfaz es la conexión entre el código y el hardware.</p>
 </section>
 <section id="subsistema-del-brazo">
 <h3>Subsistema del Brazo<a class="headerlink" href="#subsistema-del-brazo" title="Link to this heading"></a></h3>
+<blockquote>
+<div><div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ArmIO</span><span class="w"> </span><span class="n">io</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">ArmIOInputsAutoLogged</span><span class="w"> </span><span class="n">inputs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArmIOInputsAutoLogged</span><span class="p">();</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Debouncer</span><span class="w"> </span><span class="n">motorConnectedDebouncer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Debouncer</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="n">DebounceType</span><span class="p">.</span><span class="na">kFalling</span><span class="p">);</span>
+<span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Alert</span><span class="w"> </span><span class="n">motorDisconnected</span><span class="w"> </span><span class="o">=</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">Alert</span><span class="p">(</span><span class="s">&quot;Arm Motor Disconnected! D:&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">AlertType</span><span class="p">.</span><span class="na">kWarning</span><span class="p">);</span>
+
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">lastDesiredAngle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">desiredElevatorPosition</span><span class="p">;</span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">desiredOutput</span><span class="p">;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Este bloque de codigo define el subsistema del brazo.
+Primero, <code class="docutils literal notranslate"><span class="pre">ArmSubsystem</span></code> que conecta la interfaz con el robot <code class="docutils literal notranslate"><span class="pre">ArmÌO</span></code> y registra las entradas en <code class="docutils literal notranslate"><span class="pre">inputs</span></code>.
+Seguimos con el uso de un <code class="docutils literal notranslate"><span class="pre">Debouncer</span></code> y una alerta para detectar si el motor esta desconectado, además de variables como el último ángulo y la posición deseada.
+Ahora los estados: <code class="docutils literal notranslate"><span class="pre">DesiredStated</span></code> (lo que queremos que haga el brazo) y <code class="docutils literal notranslate"><span class="pre">SubsystemState</span></code> (la acción que realmente ejecuta).
+Después, tenemos el método <code class="docutils literal notranslate"><span class="pre">periodic</span></code> que actualizará lecturas y registramos en el <code class="docutils literal notranslate"><span class="pre">logger</span></code> y aplicaremos las transiciones con <a href="#id1"><span class="problematic" id="id2">``</span></a>set</p>
 </section>
 </section>
 </section>

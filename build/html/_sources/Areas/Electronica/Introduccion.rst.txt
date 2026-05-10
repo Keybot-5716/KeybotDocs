@@ -12,7 +12,7 @@ Su voltaje de funcionamiento es de 12V
 
 *  Costo: 50 dls
 *  Peso: 0.424 kg
-*  Potencia máxima: 406
+*  Potencia máxima: 406 
 
 .. figure:: ../Programacion/Img/motor_neo_V11.png
     :alt: Pruebita

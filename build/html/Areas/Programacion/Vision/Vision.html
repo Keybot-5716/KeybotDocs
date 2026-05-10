@@ -8,18 +8,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Visión en FRC &mdash; Keybot 5716 1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
 
   
       <script src="../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="../../../_static/documentation_options.js?v=f2a433a1"></script>
-      <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
-      <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Chasis en FRC" href="../Mechanism/Chassis/Introduccion.html" />
+    <link rel="next" title="Instalación y Configuración" href="Instalacion.html" />
     <link rel="prev" title="Introducción a MapleSim" href="../MapleSim/Introduccion.html" /> 
 </head>
 
@@ -63,6 +63,8 @@
 <li class="toctree-l4"><a class="reference internal" href="#como-funciona-la-limelight">¿Cómo funciona la Limelight?</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="Instalacion.html">Instalación</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Calibracion.html">Calibración y Configuración de Pipelines</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Introduccion.html#tipos-de-mecanismos-para-programar">Tipos de mecanismos para programar</a></li>
@@ -127,18 +129,18 @@
 </section>
 <section id="como-funciona-la-limelight">
 <h2>¿Cómo funciona la Limelight?<a class="headerlink" href="#como-funciona-la-limelight" title="Link to this heading"></a></h2>
-<section id="adquisicion-de-imagen">
-<h3>1.  Adquisición de imagen<a class="headerlink" href="#adquisicion-de-imagen" title="Link to this heading"></a></h3>
-<p>La Limelight captura imágenes continuamente mediante su sensor integrado y las procesa a alta frecuencia (hasta ~90 FPS dependiendo de la configuración). Estas imágenes constituyen la entrada del pipeline de visión.</p>
+<section id="captura-de-imagen">
+<h3>1.  Captura de imagen<a class="headerlink" href="#captura-de-imagen" title="Link to this heading"></a></h3>
+<p>La Limelight captura imágenes continuamente mediante su sensor integrado y las procesa a alta tasa de refresco (hasta 90 FPS dependiendo de la configuración). Estas imágenes constituyen la entrada del pipeline de visión.</p>
 </section>
 <section id="pipeline-de-procesamiento-interno">
 <h3>2. Pipeline de procesamiento interno<a class="headerlink" href="#pipeline-de-procesamiento-interno" title="Link to this heading"></a></h3>
-<p>La Limelight ejecuta un pipeline de visión embebido que procesa cada frame sin intervención del roboRIO. Este pipeline incluye múltiples etapas configurables desde la interfaz web:</p>
+<p>La Limelight ejecuta un pipeline de visión que procesa cada fotograma sin intervención de la roboRIO. Este pipeline incluye varias etapas configurables desde la interfaz web:</p>
 <ul>
 <li><p><strong>Preprocesamiento (Input)</strong>:</p>
 <p>Ajuste de parámetros de la imagen como exposición, balance de blancos y resolución antes del procesamiento.</p>
 </li>
-<li><p><strong>Thresholding (Segmentación)</strong>:</p>
+<li><p><strong>Thresholding (Segmentación/umbralización)</strong>:</p>
 <p>Aplicación de filtros (por ejemplo en espacio de color HSV) para aislar regiones de interés según características visuales específicas.</p>
 </li>
 <li><p><strong>Detección de contornos (Contour Extraction)</strong>:</p>
@@ -157,11 +159,11 @@
 </ul>
 </li>
 </ul>
-<p>Este procesamiento ocurre completamente dentro del dispositivo, eliminando la necesidad de ejecutar algoritmos de visión en el roboRIO. :contentReference[oaicite:0]{index=0}</p>
+<p>Este procesamiento ocurre completamente dentro del dispositivo, eliminando la necesidad de ejecutar algoritmos de visión en el roboRIO.</p>
 </section>
 <section id="publicacion-de-datos-networktables">
 <h3>3. Publicación de datos (NetworkTables)<a class="headerlink" href="#publicacion-de-datos-networktables" title="Link to this heading"></a></h3>
-<p>Los resultados del pipeline se publican en la tabla <cite>“limelight”</cite> usando las <strong>NetworkTables</strong> para el  intercambio de datos a alta frecuencia. :contentReference[oaicite:1]{index=1}</p>
+<p>Los resultados del pipeline se publican en la tabla <cite>“limelight”</cite> usando las <strong>NetworkTables</strong> para el  intercambio de datos a alta frecuencia.</p>
 <p>Variables clave:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">tv</span></code> → Indicador de target válido (0 o 1)</p></li>
@@ -171,17 +173,17 @@
 <li><p><code class="docutils literal notranslate"><span class="pre">ts</span></code> → Rotación del target</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tl</span></code> → Latencia del pipeline (ms)</p></li>
 </ul>
-<p>Estos datos son leídos por el código del robot para control en tiempo real. :contentReference[oaicite:2]{index=2}</p>
+<p>Estos datos son leídos por el código del robot y sirven para tener control en tiempo real.</p>
 </section>
 <section id="integracion-con-el-control-del-robot">
 <h3>4. Integración con el control del robot<a class="headerlink" href="#integracion-con-el-control-del-robot" title="Link to this heading"></a></h3>
-<p>El roboRIO consume los valores de NetworkTables para implementar algoritmos de control (por ejemplo, PID). Un caso típico es la alineación automática:</p>
+<p>El roboRIO toma los valores de NetworkTables para la parte de algoritmos de control (por ejemplo PID). Un caso típico es la alineación automática:</p>
 <ul class="simple">
 <li><p>El error del ángulo se obtiene de <code class="docutils literal notranslate"><span class="pre">tx</span></code></p></li>
 <li><p>El controlador ajusta la velocidad angular del robot hasta que <code class="docutils literal notranslate"><span class="pre">tx</span> <span class="pre">≈</span> <span class="pre">0</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">ta</span></code> puede utilizarse como estimación aproximada de distancia</p></li>
 </ul>
-<p>Debido a que la Limelight realiza todo el procesamiento de imágenes, la roboRIO se limita a lógica de control y gracias a esta organización se pueden optimizar los recursos del sistema.</p>
+<p>Debido a que la Limelight realiza todo el procesamiento de imágenes, la roboRIO se limita a la parte de lógica de control y gracias a esta organización se pueden optimizar los recursos del sistema de mejor forma.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>Es importante mencionar que la LimeLight se puede llegar a calentar mucho después de unos minutos de uso debido a la alta cantidad de datos que procesa, por lo que lo recomendable limitar su uso a la duración de un match (2 min aprox.) y dejarla reposar unos 15 minutos</p>
@@ -195,7 +197,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../MapleSim/Introduccion.html" class="btn btn-neutral float-left" title="Introducción a MapleSim" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../Mechanism/Chassis/Introduccion.html" class="btn btn-neutral float-right" title="Chasis en FRC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Instalacion.html" class="btn btn-neutral float-right" title="Instalación y Configuración" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
